@@ -1,0 +1,14 @@
+{
+    "Broker":{
+        "Host": "192.168.23.58",
+        "Port": 1883,
+        "Username": "admin",
+        "Password": "admin",
+        "Domain":   "eastsoft"
+    },
+    "Modbus":{
+        "Host": "127.0.0.1",
+        "Port": 502
+
+    }
+}
