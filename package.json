@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test-converter": "node test/test-converter.js",
+    "test-read": "node examples/test-converter.js",
+    "test-cmd": "node examples/test-cmdMessage.js",
     "start":"node index.js"
   },
   "keywords": [],

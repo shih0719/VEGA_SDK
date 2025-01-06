@@ -6,7 +6,7 @@ const message = {
       "switch_ch1":false
     }
   }
-const r = Service._handleMQTTMessage('test/GW/DK1',JSON.stringify(message));
-for (const key in r){
-    console.log(`key:${key},Type of key:${typeof key}`);
+const r = Service._handleMQTTMessage('test/GW/DK2',JSON.stringify(message));
+for (const [key, value] of r) {
+  console.log(`Key: ${key}, Type of key: ${typeof key}, Value: ${value}`);
 }
