@@ -6,4 +6,5 @@ Service.startMQTT();
 Service.startModbus();
 Service.on('mqttConnected', () => {
     Service.subscribe('test/GW/+');
+    Service.subscribe('eastsoft/0000IPX8/+');
 });
