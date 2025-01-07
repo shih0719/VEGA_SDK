@@ -1,8 +1,8 @@
 {
-  "name": "sdk",
+  "name": "vega-sdk",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/core.js",
   "scripts": {
     "test-read": "node examples/test-converter.js",
     "test-cmd": "node examples/test-cmdMessage.js",
@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "modbus-serial": "^8.0.17",
-    "mqtt": "^5.10.3"
+    "mqtt": "^5.10.3",
+    "events": "^3.3.0"
   }
 }
