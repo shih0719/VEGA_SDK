@@ -4,7 +4,7 @@
   "description": "",
   "main": "lib/core.js",
   "bin": {
-    "myapp": "./bin/cli.js"
+    "app": "./bin/cli.js"
   },
   "scripts": {
     "test-read": "node examples/test-converter.js",
