@@ -29,9 +29,7 @@ program
         Service = new mqtt2modbus(config);
         Service.startMQTT();
         Service.startModbus();
-        Service.on('mqttConnected', () => {
-            Service.subscribe('1PNLY77GX/00002AEK/#');
-        });
+        
     });
     const rl = readline.createInterface({
         input: process.stdin,

@@ -4,7 +4,10 @@ const config = {
         options: {
             clientId: 'vega-mqtt2modbus',
             username: '',
-            password: ''
+            password: '',
+            reconnectPeriod: 1000, // 重新连接的时间间隔，单位为毫秒
+            connectTimeout: 30 * 1000, // 连接超时时间，单位为毫秒
+            keepalive: 60, // 心跳间隔时间，单位为秒
         }
     },
     modbus: {
