@@ -1,10 +1,10 @@
 const config = {
     mqtt: {
-        url: 'mqtt://iot.eastsoft.com.cn',
+        url: 'mqtt://192.168.23.58',
         options: {
             clientId: 'vega-mqtt2modbus',
-            username: '0fbf92de-4ee3-4ac6-ade4-b6a92de4cc52',
-            password: 'V50QDL3N'
+            username: '',
+            password: ''
         }
     },
     modbus: {
@@ -12,11 +12,13 @@ const config = {
         port: 502,
     },
     map: new Map([
-        ['1PNLY77GX/00002AEK/0000LGFD', { type: 'switch', channels: { switch_ch1: 1, switch_ch2: 2, switch_ch3: 3, switch_ch4: 4 } }],
-        ['1PNLY77GX/00002AEK/DK2', { type: 'switch', channels: { switch_ch1: 5, switch_ch2: 6, switch_ch3: 7, switch_ch4: 8 } }],
-        ['1PNLY77GX/00002AEK/DK3', { type: 'switch', channels: { switch_ch1: 9, switch_ch2: 10, switch_ch3: 11, switch_ch4: 12 } }],
-        ['1PNLY77GX/00002AEK/DK4', { type: 'panel', channels: { switch_ch1: 13, button_id: 14 } }],
-        
+        ['eastsoft/0000IPX8/0000MLID', { type: 'switch', channels: { switch_ch1: 1, switch_ch2: 2, switch_ch3: 3} }],
+        ['eastsoft/0000IPX8/0000EMVU', { type: 'switch', channels: { switch_ch1: 4, switch_ch2: 5, switch_ch3: 6} }],
+        ['eastsoft/0000IPX8/0000LE9W', { type: 'switch', channels: { switch_ch1: 7, switch_ch2: 8, switch_ch3: 9} }],
+        ['eastsoft/0000IPX8/00004Q1N', { type: 'switch', channels: { switch_ch1: 10, switch_ch2: 11, switch_ch3: 12} }],
+        ['eastsoft/0000IPX8/0000BIWH', { type: 'switch', channels: { switch_ch1: 13, switch_ch2: 14, switch_ch3: 15} }],
+        ['eastsoft/0000IPX8/000026CG', { type: 'switch', channels: { switch_ch1: 16, switch_ch2: 17, switch_ch3: 18} }],
+        ['eastsoft/0000IPX8/00003AAD', { type: 'switch', channels: { switch_ch1: 19, switch_ch2: 20, switch_ch3: 21} }],
     ]),
     
 };
