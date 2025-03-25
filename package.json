@@ -7,8 +7,6 @@
     "app": "./bin/cli.js"
   },
   "scripts": {
-    "test-read": "node examples/test-converter.js",
-    "test-cmd": "node examples/test-cmdMessage.js",
     "start": "node index.js"
   },
   "keywords": [],
