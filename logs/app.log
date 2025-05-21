@@ -1,0 +1,31 @@
+[2025-05-21T02:23:48.751Z] INFO: Modbus server started on 127.0.0.1:502
+[2025-05-21T02:23:48.752Z] INFO: 腳本啟動
+[2025-05-21T02:23:48.766Z] INFO: MQTT connected to mqtt://192.168.23.58
+[2025-05-21T02:24:06.010Z] INFO: internal set 26 to 1010 from MQTT
+[2025-05-21T02:24:06.012Z] INFO: internal set 27 to 1 from MQTT
+[2025-05-21T02:24:19.122Z] INFO: internal set 58 to 1828 from MQTT
+[2025-05-21T02:29:30.220Z] INFO: 腳本啟動
+[2025-05-21T02:29:30.293Z] INFO: Modbus server started on 127.0.0.1:502
+[2025-05-21T02:29:30.307Z] INFO: MQTT connected to mqtt://192.168.23.58
+[2025-05-21T02:29:31.601Z] INFO: internal set 24 to 141 from MQTT
+[2025-05-21T02:29:31.608Z] INFO: internal set 25 to 0 from MQTT
+[2025-05-21T02:29:38.480Z] INFO: internal set 58 to 2469 from MQTT
+[2025-05-21T02:29:40.478Z] INFO: 服務成功關閉
+[2025-05-21T02:29:40.479Z] INFO: Modbus server stopped
+[2025-05-21T02:29:40.482Z] INFO: MQTT connection closed
+[2025-05-21T02:30:25.181Z] INFO: 腳本啟動
+[2025-05-21T02:30:25.249Z] INFO: Modbus server started on 127.0.0.1:502
+[2025-05-21T02:30:25.262Z] INFO: MQTT connected to mqtt://192.168.23.58
+[2025-05-21T02:30:35.568Z] INFO: internal set 58 to 2081 from MQTT
+[2025-05-21T02:30:36.099Z] INFO: 腳本已退出
+[2025-05-21T02:30:36.099Z] INFO: Modbus server stopped
+[2025-05-21T02:30:36.098Z] INFO: 服務成功關閉
+[2025-05-21T02:30:36.102Z] INFO: MQTT connection closed
+[2025-05-21T02:32:10.204Z] INFO: 腳本啟動
+[2025-05-21T02:32:10.277Z] INFO: Modbus server started on 127.0.0.1:502
+[2025-05-21T02:32:10.290Z] INFO: MQTT connected to mqtt://192.168.23.58
+[2025-05-21T02:32:19.789Z] INFO: internal set 58 to 1923 from MQTT
+[2025-05-21T02:32:19.801Z] INFO: 服務成功關閉
+[2025-05-21T02:32:19.802Z] INFO: Modbus server stopped
+[2025-05-21T02:32:19.801Z] INFO: 腳本已退出
+[2025-05-21T02:32:19.805Z] INFO: MQTT connection closed
