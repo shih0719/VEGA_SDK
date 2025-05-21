@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "lib/core.js",
-  "bin": {
-    "app": "./bin/cli.js"
-  },
   "scripts": {
     "start": "node index.js"
   },
