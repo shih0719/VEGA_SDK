@@ -9,7 +9,8 @@
   "scripts": {
     "test-read": "node examples/test-converter.js",
     "test-cmd": "node examples/test-cmdMessage.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -19,5 +20,8 @@
     "events": "^3.3.0",
     "modbus-serial": "^8.0.17",
     "mqtt": "^5.10.3"
+  },
+  "devDependencies": {
+    "jest": "^30.0.4"
   }
 }

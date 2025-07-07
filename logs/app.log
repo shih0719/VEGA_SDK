@@ -1,0 +1,56 @@
+2025-07-07T06:40:00.470Z [INFO] Registered device logic for type: aircondition
+2025-07-07T06:40:00.474Z [INFO] Registered device logic for type: panel
+2025-07-07T06:40:00.475Z [INFO] Registered device logic for type: switch
+2025-07-07T06:40:00.552Z [INFO] Modbus server started on 127.0.0.1:502
+2025-07-07T06:40:00.476Z [INFO] Reconnect period: 1000 ms
+2025-07-07T06:40:00.575Z [INFO] auto Subscribed to topic: test/GW/DK2
+2025-07-07T06:40:00.572Z [INFO] MQTT connected to
+2025-07-07T06:40:00.577Z [INFO] auto Subscribed to topic: test/GW/DK4
+2025-07-07T06:40:00.576Z [INFO] auto Subscribed to topic: test/GW/DK3
+2025-07-07T06:40:00.578Z [INFO] auto Subscribed to topic: eastsoft/0000IPX8/00008IBU
+2025-07-07T06:40:00.575Z [INFO] auto Subscribed to topic: test/GW/DK1
+2025-07-07T06:40:14.094Z [DEBUG] MQTT topic "eastsoft/0000IPX8/0000OENX" not found in mapConfig.
+2025-07-07T06:40:14.095Z [DEBUG] Received message from topic: eastsoft/0000IPX8/0000OENX
+2025-07-07T06:40:18.995Z [DEBUG] MQTT topic "eastsoft/0000IPX8/0000INPO" not found in mapConfig.
+2025-07-07T06:40:18.995Z [DEBUG] Received message from topic: eastsoft/0000IPX8/0000INPO
+2025-07-07T06:40:31.696Z [INFO] MQTT connected to
+2025-07-07T06:40:31.697Z [INFO] auto Subscribed to topic: test/GW/DK1
+2025-07-07T06:40:31.697Z [INFO] auto Subscribed to topic: test/GW/DK2
+2025-07-07T06:40:31.697Z [INFO] auto Subscribed to topic: test/GW/DK4
+2025-07-07T06:40:31.697Z [INFO] auto Subscribed to topic: test/GW/DK3
+2025-07-07T06:40:31.698Z [INFO] auto Subscribed to topic: eastsoft/0000IPX8/00008IBU
+2025-07-07T06:40:50.947Z [DEBUG] MQTT topic "eastsoft/0000IPX8/0000CPIQ" not found in mapConfig.
+2025-07-07T06:40:50.947Z [DEBUG] Received message from topic: eastsoft/0000IPX8/0000CPIQ
+2025-07-07T06:41:03.025Z [INFO] MQTT connected to
+2025-07-07T06:41:03.025Z [INFO] auto Subscribed to topic: test/GW/DK1
+2025-07-07T06:41:03.026Z [INFO] auto Subscribed to topic: test/GW/DK4
+2025-07-07T06:41:03.026Z [INFO] auto Subscribed to topic: test/GW/DK2
+2025-07-07T06:41:03.026Z [INFO] auto Subscribed to topic: eastsoft/0000IPX8/00008IBU
+2025-07-07T06:41:03.026Z [INFO] auto Subscribed to topic: test/GW/DK3
+2025-07-07T06:42:47.106Z [INFO] Registered device logic for type: aircondition
+2025-07-07T06:42:47.109Z [INFO] Registered device logic for type: panel
+2025-07-07T06:42:47.110Z [INFO] Reconnect period: 1000 ms
+2025-07-07T06:42:47.168Z [INFO] Modbus server started on 127.0.0.1:502
+2025-07-07T06:42:47.109Z [INFO] Registered device logic for type: switch
+2025-07-07T06:42:47.183Z [INFO] MQTT connected to
+2025-07-07T06:42:47.185Z [INFO] auto Subscribed to topic: test/GW/DK1
+2025-07-07T06:42:47.186Z [INFO] auto Subscribed to topic: test/GW/DK2
+2025-07-07T06:42:47.187Z [INFO] auto Subscribed to topic: test/GW/DK3
+2025-07-07T06:42:47.187Z [INFO] auto Subscribed to topic: test/GW/DK4
+2025-07-07T06:42:47.188Z [INFO] auto Subscribed to topic: eastsoft/0000IPX8/00008IBU
+2025-07-07T06:43:18.912Z [DEBUG] MQTT topic "eastsoft/0000IPX8/0000INPO" not found in mapConfig.
+2025-07-07T06:43:18.913Z [DEBUG] Received message from topic: eastsoft/0000IPX8/0000INPO
+2025-07-07T06:43:55.238Z [DEBUG] Internal set 9 to 1 from MQTT
+2025-07-07T06:43:55.238Z [DEBUG] Key: 9, Value: 1
+2025-07-07T06:43:55.239Z [DEBUG] Received message from topic: test/GW/DK3
+2025-07-07T06:44:15.130Z [INFO] Published topic: test/GW/DK3/command
+2025-07-07T06:44:15.130Z [DEBUG] External set 9 to 0 from Modbus
+2025-07-07T06:44:15.130Z [INFO] Published message: {"function":{"switch_ch1":false},"cmd":"write","source":"vega-SDK"}
+2025-07-07T06:44:18.960Z [DEBUG] Received message from topic: eastsoft/0000IPX8/0000INPO
+2025-07-07T06:44:18.960Z [DEBUG] MQTT topic "eastsoft/0000IPX8/0000INPO" not found in mapConfig.
+2025-07-07T06:44:28.850Z [DEBUG] MQTT topic "eastsoft/0000IPX8/0000D0TF" not found in mapConfig.
+2025-07-07T06:44:28.850Z [DEBUG] Received message from topic: eastsoft/0000IPX8/0000D0TF
+2025-07-07T06:44:39.502Z [DEBUG] MQTT topic "eastsoft/0000IPX8/0000OENX" not found in mapConfig.
+2025-07-07T06:44:39.502Z [DEBUG] Received message from topic: eastsoft/0000IPX8/0000OENX
+2025-07-07T06:45:19.000Z [DEBUG] MQTT topic "eastsoft/0000IPX8/0000INPO" not found in mapConfig.
+2025-07-07T06:45:19.001Z [DEBUG] Received message from topic: eastsoft/0000IPX8/0000INPO
