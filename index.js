@@ -1,10 +1,9 @@
-const mqtt2modbus = require('./lib/core');
-const config = require('./lib/config');
+const mqtt2modbus = require("./lib/core");
+const config = require("./lib/config");
 
 const Service = new mqtt2modbus(config);
-Service.startMQTT();
-Service.startModbus();
-Service.on('mqttConnected', () => {
-    Service.subscribe('test/GW/+');
-    Service.subscribe('eastsoft/0000IPX8/+');
+Service.start();
+Service.on("mqttConnected", () => {
+  Service.mqttService.subscribe("test/GW/+");
+  Service.mqttService.subscribe("eastsoft/0000IPX8/+");
 });
