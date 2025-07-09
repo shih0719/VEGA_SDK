@@ -2278,3 +2278,37 @@
 2025-07-07T07:36:22.432Z [DEBUG] Modbus read holding register at address 17: 0
 2025-07-07T07:36:22.926Z [DEBUG] Received message from topic: eastsoft/0000IPX8/0000INPO
 2025-07-07T07:36:22.927Z [DEBUG] MQTT topic "eastsoft/0000IPX8/0000INPO" not found in mapConfig.
+2025-07-09T02:48:52.156Z [INFO] Registered device logic for type: panel
+2025-07-09T02:48:52.154Z [INFO] Registered device logic for type: aircondition
+2025-07-09T02:48:52.156Z [INFO] Registered device logic for type: switch
+2025-07-09T02:48:52.439Z [INFO] MQTT reconnect period: 1000 ms
+2025-07-09T02:48:52.504Z [INFO] Modbus server initialized.
+2025-07-09T02:48:52.505Z [INFO] CoreService: All services started.
+2025-07-09T02:48:52.505Z [INFO] CoreService: Modbus server started.
+2025-07-09T02:48:52.505Z [INFO] Modbus server started on 127.0.0.1:502
+2025-07-09T02:48:52.515Z [INFO] MQTT connected to
+2025-07-09T02:48:52.516Z [INFO] CoreService: MQTT connected.
+2025-07-09T02:48:52.518Z [INFO] Subscribed to topic: test/GW/DK1
+2025-07-09T02:48:52.518Z [INFO] Subscribed to topic: test/GW/DK2
+2025-07-09T02:48:52.520Z [INFO] Subscribed to topic: test/GW/+
+2025-07-09T02:48:52.521Z [INFO] Subscribed to topic: eastsoft/0000IPX8/+
+2025-07-09T02:48:52.519Z [INFO] Subscribed to topic: test/GW/DK3
+2025-07-09T02:48:52.520Z [INFO] Subscribed to topic: eastsoft/0000IPX8/00008IBU
+2025-07-09T02:48:52.519Z [INFO] Subscribed to topic: test/GW/DK4
+2025-07-09T02:48:55.778Z [DEBUG] MQTT topic "eastsoft/0000IPX8/00009ERQ" not found in mapConfig.
+2025-07-09T02:48:55.778Z [DEBUG] Received message from topic: eastsoft/0000IPX8/00009ERQ
+2025-07-09T02:55:10.186Z [INFO] Registered device logic for type: panel
+2025-07-09T02:55:10.184Z [INFO] Registered device logic for type: aircondition
+2025-07-09T02:55:10.186Z [INFO] Registered device logic for type: switch
+2025-07-09T02:55:10.386Z [INFO] MQTT reconnect period: 1000 ms
+2025-07-09T02:55:10.441Z [INFO] Modbus server started on 127.0.0.1:502
+2025-07-09T02:55:10.440Z [INFO] Modbus server initialized.
+2025-07-09T02:55:10.442Z [INFO] CoreService: All services started.
+2025-07-09T02:55:10.441Z [INFO] CoreService: Modbus server started.
+2025-07-09T02:55:10.449Z [INFO] MQTT connected to
+2025-07-09T02:55:10.450Z [INFO] CoreService: MQTT connected.
+2025-07-09T02:55:10.452Z [INFO] Subscribed to topic: test/GW/DK1
+2025-07-09T02:55:10.452Z [INFO] Subscribed to topic: test/GW/DK2
+2025-07-09T02:55:10.453Z [INFO] Subscribed to topic: test/GW/DK3
+2025-07-09T02:55:10.453Z [INFO] Subscribed to topic: test/GW/DK4
+2025-07-09T02:55:10.454Z [INFO] Subscribed to topic: eastsoft/0000IPX8/00008IBU

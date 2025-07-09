@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "lib/core.js",
-  "bin": {
-    "app": "./bin/cli.js"
-  },
   "scripts": {
     "test-read": "node examples/test-converter.js",
     "test-cmd": "node examples/test-cmdMessage.js",
@@ -17,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^13.0.0",
+    "dotenv": "^17.1.0",
     "events": "^3.3.0",
     "modbus-serial": "^8.0.17",
     "mqtt": "^5.10.3"
