@@ -9,9 +9,13 @@ let Service; // 宣告 Service 變數
 
 // 載入設定並初始化服務的函數
 const loadConfigAndInitializeService = () => {
+  // 重新載入 .env 檔案，確保 process.env 中的變數是最新的
+  // { override: true } 確保新的變數會覆寫舊的
+  require("dotenv").config({ override: true });
   // 清除 require 緩存，確保每次都載入最新的設定
   delete require.cache[require.resolve("./lib/config")];
   const config = require("./lib/config");
+  const mqtt2modbus = require("./lib/core");
   return new mqtt2modbus(config);
 };
 
@@ -33,14 +37,13 @@ app.post("/restart", async (req, res) => {
       await Service.stop(); // 停止舊的服務實例
       logger.info("Old service instance stopped.");
     }
-    Service = loadConfigAndInitializeService(); // 重新載入設定並建立新的服務實例
-    await Service.start(); // 啟動新的服務實例
-    logger.info("New service instance started successfully.");
-    res.status(200).send("Service restarted successfully.");
   } catch (error) {
     logger.error("Failed to restart service:", error);
-    res.status(500).send("Failed to restart service.");
   }
+  Service = loadConfigAndInitializeService(); // 重新載入設定並建立新的服務實例
+  await Service.start(); // 啟動新的服務實例
+  logger.info("New service instance started successfully.");
+  res.status(200).send("Service restarted successfully.");
 });
 
 app.listen(port, () => {
