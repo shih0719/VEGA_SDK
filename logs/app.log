@@ -2312,3 +2312,751 @@
 2025-07-09T02:55:10.453Z [INFO] Subscribed to topic: test/GW/DK3
 2025-07-09T02:55:10.453Z [INFO] Subscribed to topic: test/GW/DK4
 2025-07-09T02:55:10.454Z [INFO] Subscribed to topic: eastsoft/0000IPX8/00008IBU
+2025-07-10T03:39:39.538Z [INFO] Registered device logic for type: aircondition
+2025-07-10T03:39:39.541Z [INFO] Registered device logic for type: panel
+2025-07-10T03:39:40.100Z [INFO] Modbus server initialized.
+2025-07-10T03:39:39.834Z [INFO] MQTT reconnect period: 1000 ms
+2025-07-10T03:39:40.101Z [INFO] Modbus server started on 127.0.0.1:502
+2025-07-10T03:39:40.101Z [INFO] CoreService: Modbus server started.
+2025-07-10T03:39:39.542Z [INFO] Registered device logic for type: switch
+2025-07-10T03:39:40.102Z [INFO] CoreService: All services started.
+2025-07-10T03:39:40.108Z [INFO] MQTT connected to
+2025-07-10T03:39:40.108Z [INFO] CoreService: MQTT connected.
+2025-07-10T03:39:40.110Z [INFO] Subscribed to topic: test/GW/DK1
+2025-07-10T03:39:40.111Z [INFO] Subscribed to topic: test/GW/DK2
+2025-07-10T03:39:40.112Z [INFO] Subscribed to topic: test/GW/DK3
+2025-07-10T03:39:40.113Z [INFO] Subscribed to topic: eastsoft/0000IPX8/00008IBU
+2025-07-10T03:39:40.112Z [INFO] Subscribed to topic: test/GW/DK4
+2025-07-10T04:26:10.607Z [INFO] MQTT connection closed
+2025-07-10T04:26:10.607Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T04:26:11.614Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T04:26:11.618Z [INFO] MQTT connected to
+2025-07-10T04:26:11.618Z [INFO] CoreService: MQTT connected.
+2025-07-10T04:26:11.619Z [INFO] Subscribed to topic: test/GW/DK2
+2025-07-10T04:26:11.618Z [INFO] Subscribed to topic: test/GW/DK1
+2025-07-10T04:26:11.619Z [INFO] Subscribed to topic: test/GW/DK3
+2025-07-10T04:26:11.621Z [INFO] Subscribed to topic: eastsoft/0000IPX8/00008IBU
+2025-07-10T04:26:11.620Z [INFO] Subscribed to topic: test/GW/DK4
+2025-07-10T04:47:48.642Z [ERROR] Error during device read operation: Function has non-object prototype 'undefined' in instanceof check
+2025-07-10T04:47:48.641Z [DEBUG] Received message from topic: eastsoft/0000IPX8/00008IBU
+2025-07-10T04:47:48.642Z [ERROR] AirConditionLogic validation failed: Invalid aircondition data format: missing or invalid "function" object.
+2025-07-10T04:47:48.642Z [ERROR] DeviceError processing MQTT message for topic eastsoft/0000IPX8/00008IBU: Failed to read device data: Function has non-object prototype 'undefined' in instanceof check
+2025-07-10T05:18:51.740Z [INFO] Registered device logic for type: aircondition
+2025-07-10T05:18:51.742Z [INFO] Registered device logic for type: panel
+2025-07-10T05:18:52.017Z [INFO] MQTT reconnect period: 1000 ms
+2025-07-10T05:18:51.742Z [INFO] Registered device logic for type: switch
+2025-07-10T05:18:52.290Z [INFO] Modbus server initialized.
+2025-07-10T05:18:52.291Z [INFO] Modbus server started on 127.0.0.1:502
+2025-07-10T05:18:52.291Z [INFO] CoreService: Modbus server started.
+2025-07-10T05:18:52.292Z [INFO] CoreService: All services started.
+2025-07-10T05:18:52.306Z [INFO] MQTT connected to
+2025-07-10T05:18:52.306Z [INFO] CoreService: MQTT connected.
+2025-07-10T05:18:52.308Z [INFO] Subscribed to topic: test/GW/DK1
+2025-07-10T05:18:52.310Z [INFO] Subscribed to topic: test/GW/DK2
+2025-07-10T05:18:52.311Z [INFO] Subscribed to topic: test/GW/DK3
+2025-07-10T05:18:52.311Z [INFO] Subscribed to topic: test/GW/DK4
+2025-07-10T05:18:52.312Z [INFO] Subscribed to topic: eastsoft/0000IPX8/00008IBU
+2025-07-10T05:41:12.271Z [DEBUG] Received message from topic: eastsoft/0000IPX8/00008IBU
+2025-07-10T05:41:12.275Z [DEBUG] Modbus internal set holding register at address 15 with value 1
+2025-07-10T05:41:12.276Z [DEBUG] Modbus internal set holding register at address 16 with value 3
+2025-07-10T05:41:12.278Z [DEBUG] Modbus internal set holding register at address 17 with value 160
+2025-07-10T05:41:12.279Z [DEBUG] Modbus internal set holding register at address 18 with value 0
+2025-07-10T05:51:48.169Z [DEBUG] Received message from topic: eastsoft/0000IPX8/00008IBU
+2025-07-10T05:51:48.170Z [DEBUG] Modbus internal set holding register at address 19 with value 262
+2025-07-10T05:51:48.171Z [DEBUG] Modbus internal set holding register at address 20 with value 726
+2025-07-10T06:03:35.187Z [INFO] Registered device logic for type: panel
+2025-07-10T06:03:35.187Z [INFO] Registered device logic for type: switch
+2025-07-10T06:03:35.184Z [INFO] Registered device logic for type: aircondition
+2025-07-10T06:03:35.517Z [INFO] MQTT reconnect period: 1000 ms
+2025-07-10T06:03:35.572Z [INFO] CoreService: Modbus server started.
+2025-07-10T06:03:35.572Z [INFO] CoreService: All services started.
+2025-07-10T06:03:35.560Z [INFO] API server listening at http://localhost:3000
+2025-07-10T06:03:35.568Z [INFO] Modbus server initialized.
+2025-07-10T06:03:35.568Z [INFO] Modbus server started on 127.0.0.1:502
+2025-07-10T06:03:35.579Z [INFO] MQTT connected to
+2025-07-10T06:03:35.583Z [INFO] CoreService: MQTT connected.
+2025-07-10T06:03:35.587Z [INFO] Subscribed to topic: test/GW/DK1
+2025-07-10T06:03:35.587Z [INFO] Subscribed to topic: test/GW/DK2
+2025-07-10T06:03:35.589Z [INFO] Subscribed to topic: eastsoft/0000IPX8/00008IBU
+2025-07-10T06:03:35.588Z [INFO] Subscribed to topic: test/GW/DK3
+2025-07-10T06:03:35.588Z [INFO] Subscribed to topic: test/GW/DK4
+2025-07-10T06:12:19.793Z [INFO] Registered device logic for type: aircondition
+2025-07-10T06:12:19.795Z [INFO] Registered device logic for type: panel
+2025-07-10T06:12:19.795Z [INFO] Registered device logic for type: switch
+2025-07-10T06:12:20.127Z [INFO] MQTT reconnect period: 1000 ms
+2025-07-10T06:12:20.174Z [INFO] API server listening at http://localhost:3000
+2025-07-10T06:12:20.176Z [INFO] Modbus server initialized.
+2025-07-10T06:12:20.177Z [INFO] Modbus server started on 127.0.0.1:502
+2025-07-10T06:12:20.177Z [INFO] CoreService: Modbus server started.
+2025-07-10T06:12:20.178Z [INFO] CoreService: All services started.
+2025-07-10T06:12:20.184Z [INFO] MQTT connected to
+2025-07-10T06:12:20.185Z [INFO] CoreService: MQTT connected.
+2025-07-10T06:12:20.188Z [INFO] Subscribed to topic: test/GW/DK3
+2025-07-10T06:12:20.187Z [INFO] Subscribed to topic: test/GW/DK1
+2025-07-10T06:12:20.187Z [INFO] Subscribed to topic: test/GW/DK2
+2025-07-10T06:12:20.188Z [INFO] Subscribed to topic: test/GW/DK4
+2025-07-10T06:12:20.189Z [INFO] Subscribed to topic: eastsoft/0000IPX8/00008IBU
+2025-07-10T06:12:37.875Z [INFO] Received request to restart service.
+2025-07-10T06:12:37.878Z [INFO] CoreService: All services stopped.
+2025-07-10T06:12:37.879Z [INFO] Old service instance stopped.
+2025-07-10T06:12:37.882Z [INFO] Modbus server started on 127.0.0.1:502
+2025-07-10T06:12:37.888Z [INFO] CoreService: All services started.
+2025-07-10T06:12:37.882Z [INFO] CoreService: Modbus server started.
+2025-07-10T06:12:37.880Z [INFO] MQTT reconnect period: 1000 ms
+2025-07-10T06:12:37.896Z [INFO] Modbus server stopped
+2025-07-10T06:12:37.897Z [INFO] CoreService: Modbus server stopped.
+2025-07-10T06:12:37.904Z [INFO] Modbus server initialized.
+2025-07-10T06:12:37.889Z [INFO] New service instance started successfully.
+2025-07-10T06:12:37.910Z [INFO] MQTT connection closed
+2025-07-10T06:12:37.915Z [INFO] MQTT disconnected
+2025-07-10T06:12:37.911Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:12:37.931Z [INFO] Subscribed to topic: test/GW/DK1
+2025-07-10T06:12:37.933Z [INFO] Subscribed to topic: test/GW/DK2
+2025-07-10T06:12:37.940Z [INFO] Subscribed to topic: test/GW/DK3
+2025-07-10T06:12:37.943Z [INFO] Subscribed to topic: test/GW/DK4
+2025-07-10T06:12:37.944Z [INFO] Subscribed to topic: eastsoft/0000IPX8/00008IBU
+2025-07-10T06:12:37.927Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:12:37.928Z [INFO] MQTT connected to
+2025-07-10T06:12:37.930Z [INFO] CoreService: MQTT connected.
+2025-07-10T06:12:55.238Z [INFO] exp.env updated, restarting service...
+2025-07-10T06:12:55.239Z [ERROR] Failed to restart service after exp.env update:
+2025-07-10T06:13:14.816Z [INFO] Received request to restart service.
+2025-07-10T06:13:14.817Z [INFO] CoreService: All services stopped.
+2025-07-10T06:13:14.823Z [INFO] CoreService: Modbus server started.
+2025-07-10T06:13:14.825Z [INFO] CoreService: All services started.
+2025-07-10T06:13:14.826Z [INFO] New service instance started successfully.
+2025-07-10T06:13:14.826Z [INFO] Modbus server stopped
+2025-07-10T06:13:14.827Z [INFO] CoreService: Modbus server stopped.
+2025-07-10T06:13:14.830Z [INFO] Modbus server initialized.
+2025-07-10T06:13:14.819Z [INFO] Old service instance stopped.
+2025-07-10T06:13:14.820Z [INFO] MQTT reconnect period: 1000 ms
+2025-07-10T06:13:14.822Z [INFO] Modbus server started on 127.0.0.1:502
+2025-07-10T06:13:14.832Z [INFO] MQTT connection closed
+2025-07-10T06:13:14.833Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:13:14.833Z [INFO] MQTT disconnected
+2025-07-10T06:13:14.833Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:13:14.837Z [INFO] MQTT connected to
+2025-07-10T06:13:14.863Z [INFO] Subscribed to topic: test/GW/DK3
+2025-07-10T06:13:14.864Z [INFO] Subscribed to topic: test/GW/DK4
+2025-07-10T06:13:14.866Z [INFO] Subscribed to topic: eastsoft/0000IPX8/00008IBU
+2025-07-10T06:13:14.859Z [INFO] CoreService: MQTT connected.
+2025-07-10T06:13:14.862Z [INFO] Subscribed to topic: test/GW/DK1
+2025-07-10T06:13:14.863Z [INFO] Subscribed to topic: test/GW/DK2
+2025-07-10T06:14:01.949Z [INFO] exp.env updated, restarting service...
+2025-07-10T06:14:01.950Z [ERROR] Failed to restart service after exp.env update:
+2025-07-10T06:16:29.754Z [INFO] Registered device logic for type: aircondition
+2025-07-10T06:16:29.757Z [INFO] Registered device logic for type: panel
+2025-07-10T06:16:29.757Z [INFO] Registered device logic for type: switch
+2025-07-10T06:16:30.164Z [INFO] MQTT reconnect period: 1000 ms
+2025-07-10T06:16:30.231Z [INFO] API server listening at http://localhost:3000
+2025-07-10T06:16:30.233Z [INFO] Modbus server initialized.
+2025-07-10T06:16:30.234Z [INFO] Modbus server started on 127.0.0.1:502
+2025-07-10T06:16:30.236Z [INFO] CoreService: Modbus server started.
+2025-07-10T06:16:30.237Z [INFO] CoreService: All services started.
+2025-07-10T06:16:30.256Z [INFO] MQTT connected to
+2025-07-10T06:16:30.256Z [INFO] CoreService: MQTT connected.
+2025-07-10T06:16:30.258Z [INFO] Subscribed to topic: test/GW/DK1
+2025-07-10T06:16:30.258Z [INFO] Subscribed to topic: test/GW/DK2
+2025-07-10T06:16:30.258Z [INFO] Subscribed to topic: test/GW/DK3
+2025-07-10T06:16:30.259Z [INFO] Subscribed to topic: eastsoft/0000IPX8/00008IBU
+2025-07-10T06:16:30.259Z [INFO] Subscribed to topic: test/GW/DK4
+2025-07-10T06:18:10.938Z [INFO] Registered device logic for type: aircondition
+2025-07-10T06:18:10.940Z [INFO] Registered device logic for type: panel
+2025-07-10T06:18:10.941Z [INFO] Registered device logic for type: switch
+2025-07-10T06:18:11.446Z [INFO] MQTT reconnect period: 1000 ms
+2025-07-10T06:18:11.527Z [INFO] API server listening at http://localhost:3000
+2025-07-10T06:18:11.529Z [INFO] Modbus server initialized.
+2025-07-10T06:18:11.530Z [INFO] Modbus server started on 127.0.0.1:502
+2025-07-10T06:18:11.530Z [INFO] CoreService: Modbus server started.
+2025-07-10T06:18:11.531Z [INFO] CoreService: All services started.
+2025-07-10T06:18:11.547Z [INFO] MQTT connected to
+2025-07-10T06:18:11.547Z [INFO] CoreService: MQTT connected.
+2025-07-10T06:18:11.549Z [INFO] Subscribed to topic: test/GW/DK1
+2025-07-10T06:18:11.550Z [INFO] Subscribed to topic: test/GW/DK2
+2025-07-10T06:18:11.555Z [INFO] Subscribed to topic: test/GW/DK3
+2025-07-10T06:18:11.556Z [INFO] Subscribed to topic: eastsoft/0000IPX8/00008IBU
+2025-07-10T06:18:11.556Z [INFO] Subscribed to topic: test/GW/DK4
+2025-07-10T06:18:18.284Z [INFO] exp.env updated, restarting service...
+2025-07-10T06:18:18.288Z [ERROR] Failed to restart service after exp.env update:
+2025-07-10T06:19:07.170Z [INFO] Registered device logic for type: panel
+2025-07-10T06:19:07.167Z [INFO] Registered device logic for type: aircondition
+2025-07-10T06:19:07.171Z [INFO] Registered device logic for type: switch
+2025-07-10T06:19:07.612Z [INFO] MQTT reconnect period: 1000 ms
+2025-07-10T06:19:07.677Z [INFO] API server listening at http://localhost:3000
+2025-07-10T06:19:07.680Z [INFO] CoreService: Modbus server started.
+2025-07-10T06:19:07.681Z [INFO] CoreService: All services started.
+2025-07-10T06:19:07.680Z [INFO] Modbus server started on 127.0.0.1:502
+2025-07-10T06:19:07.679Z [INFO] Modbus server initialized.
+2025-07-10T06:20:39.419Z [INFO] Registered device logic for type: aircondition
+2025-07-10T06:20:39.421Z [INFO] Registered device logic for type: panel
+2025-07-10T06:20:39.421Z [INFO] Registered device logic for type: switch
+2025-07-10T06:20:39.774Z [INFO] MQTT reconnect period: 1000 ms
+2025-07-10T06:20:39.824Z [INFO] API server listening at http://localhost:3000
+2025-07-10T06:20:39.825Z [INFO] Modbus server initialized.
+2025-07-10T06:20:39.826Z [INFO] Modbus server started on 127.0.0.1:502
+2025-07-10T06:20:39.827Z [INFO] CoreService: Modbus server started.
+2025-07-10T06:20:39.827Z [INFO] CoreService: All services started.
+2025-07-10T06:22:48.370Z [INFO] Registered device logic for type: aircondition
+2025-07-10T06:22:48.372Z [INFO] Registered device logic for type: panel
+2025-07-10T06:22:48.372Z [INFO] Registered device logic for type: switch
+2025-07-10T06:22:48.721Z [INFO] MQTT reconnect period: 1000 ms
+2025-07-10T06:22:48.774Z [INFO] API server listening at http://localhost:3000
+2025-07-10T06:22:48.776Z [INFO] Modbus server initialized.
+2025-07-10T06:22:48.776Z [INFO] Modbus server started on 127.0.0.1:502
+2025-07-10T06:22:48.777Z [INFO] CoreService: Modbus server started.
+2025-07-10T06:22:48.777Z [INFO] CoreService: All services started.
+2025-07-10T06:38:25.251Z [INFO] MQTT reconnect period: 1000 ms
+2025-07-10T06:38:24.894Z [INFO] Registered device logic for type: aircondition
+2025-07-10T06:38:24.896Z [INFO] Registered device logic for type: panel
+2025-07-10T06:38:25.309Z [INFO] Modbus server started on 127.0.0.1:502
+2025-07-10T06:38:25.309Z [INFO] CoreService: Modbus server started.
+2025-07-10T06:38:25.310Z [INFO] CoreService: All services started.
+2025-07-10T06:38:25.307Z [INFO] API server listening at http://localhost:3000
+2025-07-10T06:38:25.308Z [INFO] Modbus server initialized.
+2025-07-10T06:38:24.896Z [INFO] Registered device logic for type: switch
+2025-07-10T06:38:25.313Z [ERROR] MQTT connection error:
+2025-07-10T06:38:25.317Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:25.318Z [INFO] MQTT connection closed
+2025-07-10T06:38:25.319Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:26.330Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:26.334Z [ERROR] MQTT connection error:
+2025-07-10T06:38:26.335Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:26.337Z [INFO] MQTT connection closed
+2025-07-10T06:38:26.338Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:27.348Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:27.353Z [ERROR] MQTT connection error:
+2025-07-10T06:38:27.354Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:27.356Z [INFO] MQTT connection closed
+2025-07-10T06:38:27.357Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:28.362Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:28.363Z [ERROR] MQTT connection error:
+2025-07-10T06:38:28.364Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:28.365Z [INFO] MQTT connection closed
+2025-07-10T06:38:28.367Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:29.373Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:29.375Z [ERROR] MQTT connection error:
+2025-07-10T06:38:29.375Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:29.376Z [INFO] MQTT connection closed
+2025-07-10T06:38:29.376Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:30.389Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:30.390Z [ERROR] MQTT connection error:
+2025-07-10T06:38:30.391Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:30.391Z [INFO] MQTT connection closed
+2025-07-10T06:38:30.391Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:31.405Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:31.407Z [ERROR] MQTT connection error:
+2025-07-10T06:38:31.408Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:31.408Z [INFO] MQTT connection closed
+2025-07-10T06:38:31.409Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:32.411Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:32.415Z [ERROR] MQTT connection error:
+2025-07-10T06:38:32.417Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:32.426Z [INFO] MQTT connection closed
+2025-07-10T06:38:32.429Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:33.426Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:33.432Z [ERROR] MQTT connection error:
+2025-07-10T06:38:33.433Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:33.435Z [INFO] MQTT connection closed
+2025-07-10T06:38:33.439Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:34.448Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:34.456Z [ERROR] MQTT connection error:
+2025-07-10T06:38:34.457Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:34.459Z [INFO] MQTT connection closed
+2025-07-10T06:38:34.460Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:35.466Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:35.476Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:35.475Z [ERROR] MQTT connection error:
+2025-07-10T06:38:35.477Z [INFO] MQTT connection closed
+2025-07-10T06:38:35.478Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:36.479Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:36.482Z [ERROR] MQTT connection error:
+2025-07-10T06:38:36.483Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:36.483Z [INFO] MQTT connection closed
+2025-07-10T06:38:36.484Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:37.490Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:37.493Z [ERROR] MQTT connection error:
+2025-07-10T06:38:37.494Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:37.494Z [INFO] MQTT connection closed
+2025-07-10T06:38:37.495Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:38.505Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:38.508Z [ERROR] MQTT connection error:
+2025-07-10T06:38:38.509Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:38.510Z [INFO] MQTT connection closed
+2025-07-10T06:38:38.511Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:39.512Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:39.515Z [ERROR] MQTT connection error:
+2025-07-10T06:38:39.516Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:39.517Z [INFO] MQTT connection closed
+2025-07-10T06:38:39.518Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:40.517Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:40.522Z [ERROR] MQTT connection error:
+2025-07-10T06:38:40.523Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:40.523Z [INFO] MQTT connection closed
+2025-07-10T06:38:40.525Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:41.527Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:41.538Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:41.534Z [ERROR] MQTT connection error:
+2025-07-10T06:38:41.539Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:41.538Z [INFO] MQTT connection closed
+2025-07-10T06:38:42.545Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:42.547Z [ERROR] MQTT connection error:
+2025-07-10T06:38:42.548Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:42.550Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:42.548Z [INFO] MQTT connection closed
+2025-07-10T06:38:42.627Z [ERROR] Failed to restart service after .env update:
+2025-07-10T06:38:42.626Z [INFO] .env updated, restarting service...
+2025-07-10T06:38:43.556Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:43.559Z [ERROR] MQTT connection error:
+2025-07-10T06:38:43.560Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:43.561Z [INFO] MQTT connection closed
+2025-07-10T06:38:43.562Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:44.573Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:44.576Z [ERROR] MQTT connection error:
+2025-07-10T06:38:44.577Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:44.578Z [INFO] MQTT connection closed
+2025-07-10T06:38:44.579Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:45.585Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:45.590Z [ERROR] MQTT connection error:
+2025-07-10T06:38:45.591Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:45.592Z [INFO] MQTT connection closed
+2025-07-10T06:38:45.593Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:46.597Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:46.598Z [ERROR] MQTT connection error:
+2025-07-10T06:38:46.599Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:46.600Z [INFO] MQTT connection closed
+2025-07-10T06:38:46.600Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:47.614Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:47.616Z [ERROR] MQTT connection error:
+2025-07-10T06:38:47.617Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:47.616Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:47.617Z [INFO] MQTT connection closed
+2025-07-10T06:38:48.618Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:48.625Z [ERROR] MQTT connection error:
+2025-07-10T06:38:48.626Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:48.627Z [INFO] MQTT connection closed
+2025-07-10T06:38:48.628Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:49.639Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:49.643Z [ERROR] MQTT connection error:
+2025-07-10T06:38:49.643Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:49.644Z [INFO] MQTT connection closed
+2025-07-10T06:38:49.645Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:50.655Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:50.658Z [ERROR] MQTT connection error:
+2025-07-10T06:38:50.659Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:50.661Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:50.660Z [INFO] MQTT connection closed
+2025-07-10T06:38:51.660Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:51.665Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:51.664Z [ERROR] MQTT connection error:
+2025-07-10T06:38:51.666Z [INFO] MQTT connection closed
+2025-07-10T06:38:51.667Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:52.667Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:52.672Z [ERROR] MQTT connection error:
+2025-07-10T06:38:52.675Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:52.676Z [INFO] MQTT connection closed
+2025-07-10T06:38:52.677Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:52.883Z [INFO] Received request to restart service.
+2025-07-10T06:38:52.886Z [ERROR] CoreService: Failed to stop services:
+2025-07-10T06:38:52.894Z [ERROR] Failed to restart service:
+2025-07-10T06:38:53.689Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:53.690Z [ERROR] MQTT connection error:
+2025-07-10T06:38:53.691Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:53.691Z [INFO] MQTT connection closed
+2025-07-10T06:38:53.691Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:54.698Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:54.701Z [ERROR] MQTT connection error:
+2025-07-10T06:38:54.702Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:54.704Z [INFO] MQTT connection closed
+2025-07-10T06:38:54.705Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:55.714Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:55.717Z [ERROR] MQTT connection error:
+2025-07-10T06:38:55.718Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:55.719Z [INFO] MQTT connection closed
+2025-07-10T06:38:55.720Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:56.725Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:56.728Z [ERROR] MQTT connection error:
+2025-07-10T06:38:56.729Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:56.729Z [INFO] MQTT connection closed
+2025-07-10T06:38:56.730Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:57.739Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:57.743Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:57.742Z [ERROR] MQTT connection error:
+2025-07-10T06:38:57.744Z [INFO] MQTT connection closed
+2025-07-10T06:38:57.744Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:58.751Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:58.755Z [ERROR] MQTT connection error:
+2025-07-10T06:38:58.756Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:38:58.757Z [INFO] MQTT connection closed
+2025-07-10T06:38:58.758Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:59.759Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:38:59.760Z [ERROR] MQTT connection error:
+2025-07-10T06:38:59.761Z [INFO] MQTT connection closed
+2025-07-10T06:38:59.761Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:38:59.761Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:39:00.775Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:39:00.778Z [ERROR] MQTT connection error:
+2025-07-10T06:39:00.778Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:39:00.779Z [INFO] MQTT connection closed
+2025-07-10T06:39:00.780Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:39:01.788Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:39:01.791Z [ERROR] MQTT connection error:
+2025-07-10T06:39:01.792Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:39:01.793Z [INFO] MQTT connection closed
+2025-07-10T06:39:01.794Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:39:02.800Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:39:02.802Z [ERROR] MQTT connection error:
+2025-07-10T06:39:02.804Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:39:02.804Z [INFO] MQTT connection closed
+2025-07-10T06:39:02.805Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:39:03.809Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:39:03.814Z [INFO] MQTT connection closed
+2025-07-10T06:39:03.812Z [ERROR] MQTT connection error:
+2025-07-10T06:39:03.813Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:39:03.814Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:39:04.826Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:39:04.828Z [ERROR] MQTT connection error:
+2025-07-10T06:39:04.829Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:39:04.830Z [INFO] MQTT connection closed
+2025-07-10T06:39:04.830Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:39:05.831Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:39:05.833Z [ERROR] MQTT connection error:
+2025-07-10T06:39:05.834Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:39:05.835Z [INFO] MQTT connection closed
+2025-07-10T06:39:05.835Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:39:06.850Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:39:06.852Z [ERROR] MQTT connection error:
+2025-07-10T06:39:06.854Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:39:06.855Z [INFO] MQTT connection closed
+2025-07-10T06:39:06.855Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:39:07.864Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:39:07.868Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:39:07.867Z [ERROR] MQTT connection error:
+2025-07-10T06:39:07.869Z [INFO] MQTT connection closed
+2025-07-10T06:39:07.870Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:39:08.873Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:39:08.876Z [ERROR] MQTT connection error:
+2025-07-10T06:39:08.877Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:39:08.878Z [INFO] MQTT connection closed
+2025-07-10T06:39:08.879Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:39:09.884Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:39:09.887Z [ERROR] MQTT connection error:
+2025-07-10T06:39:09.888Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:39:09.889Z [INFO] MQTT connection closed
+2025-07-10T06:39:09.890Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:39:10.905Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:39:10.907Z [ERROR] MQTT connection error:
+2025-07-10T06:39:10.908Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:39:10.909Z [INFO] MQTT connection closed
+2025-07-10T06:39:10.910Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:39:11.917Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:39:11.920Z [ERROR] MQTT connection error:
+2025-07-10T06:39:11.921Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:39:11.922Z [INFO] MQTT connection closed
+2025-07-10T06:39:11.923Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:39:12.933Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:39:12.939Z [ERROR] MQTT connection error:
+2025-07-10T06:39:12.940Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:39:12.941Z [INFO] MQTT connection closed
+2025-07-10T06:39:12.942Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:39:13.945Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:39:13.949Z [ERROR] MQTT connection error:
+2025-07-10T06:39:13.950Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:39:13.951Z [INFO] MQTT connection closed
+2025-07-10T06:39:13.952Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:47:41.049Z [INFO] Registered device logic for type: aircondition
+2025-07-10T06:47:41.051Z [INFO] Registered device logic for type: panel
+2025-07-10T06:47:41.052Z [INFO] Registered device logic for type: switch
+2025-07-10T06:47:41.440Z [INFO] API server listening at http://localhost:3000
+2025-07-10T06:47:41.390Z [INFO] MQTT reconnect period: 1000 ms
+2025-07-10T06:47:41.442Z [INFO] Modbus server started on 127.0.0.1:502
+2025-07-10T06:47:41.443Z [INFO] CoreService: All services started.
+2025-07-10T06:47:41.443Z [INFO] CoreService: Modbus server started.
+2025-07-10T06:47:41.442Z [INFO] Modbus server initialized.
+2025-07-10T06:47:41.449Z [INFO] MQTT connected to
+2025-07-10T06:47:41.450Z [INFO] CoreService: MQTT connected.
+2025-07-10T06:47:41.452Z [INFO] Subscribed to topic: test/GW/DK1
+2025-07-10T06:47:41.454Z [INFO] Subscribed to topic: test/GW/DK2
+2025-07-10T06:47:41.455Z [INFO] Subscribed to topic: test/GW/DK3
+2025-07-10T06:47:41.456Z [INFO] Subscribed to topic: test/GW/DK4
+2025-07-10T06:47:41.457Z [INFO] Subscribed to topic: eastsoft/0000IPX8/00008IBU
+2025-07-10T06:47:54.123Z [ERROR] Failed to restart service after .env update:
+2025-07-10T06:47:54.122Z [INFO] .env updated, restarting service...
+2025-07-10T06:48:02.198Z [INFO] Received request to restart service.
+2025-07-10T06:48:02.200Z [INFO] CoreService: All services stopped.
+2025-07-10T06:48:02.200Z [INFO] Old service instance stopped.
+2025-07-10T06:48:02.202Z [INFO] Modbus server started on 127.0.0.1:502
+2025-07-10T06:48:02.200Z [INFO] MQTT reconnect period: 1000 ms
+2025-07-10T06:48:02.202Z [INFO] CoreService: Modbus server started.
+2025-07-10T06:48:02.205Z [INFO] New service instance started successfully.
+2025-07-10T06:48:02.214Z [INFO] Modbus server initialized.
+2025-07-10T06:48:02.207Z [INFO] Modbus server stopped
+2025-07-10T06:48:02.202Z [INFO] CoreService: All services started.
+2025-07-10T06:48:02.210Z [INFO] CoreService: Modbus server stopped.
+2025-07-10T06:48:02.215Z [INFO] MQTT connection closed
+2025-07-10T06:48:02.215Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:48:02.216Z [INFO] MQTT disconnected
+2025-07-10T06:48:02.216Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:48:02.217Z [INFO] MQTT connected to
+2025-07-10T06:48:02.218Z [INFO] CoreService: MQTT connected.
+2025-07-10T06:48:02.219Z [INFO] Subscribed to topic: test/GW/DK1
+2025-07-10T06:48:02.222Z [INFO] Subscribed to topic: test/GW/DK2
+2025-07-10T06:48:02.223Z [INFO] Subscribed to topic: test/GW/DK3
+2025-07-10T06:48:02.226Z [INFO] Subscribed to topic: eastsoft/0000IPX8/00008IBU
+2025-07-10T06:48:02.224Z [INFO] Subscribed to topic: test/GW/DK4
+2025-07-10T06:50:05.934Z [DEBUG] Modbus read holding register at address 0: 0
+2025-07-10T06:50:05.936Z [DEBUG] Modbus read holding register at address 2: 0
+2025-07-10T06:50:05.937Z [DEBUG] Modbus read holding register at address 3: 0
+2025-07-10T06:50:05.939Z [DEBUG] Modbus read holding register at address 4: 0
+2025-07-10T06:50:05.941Z [DEBUG] Modbus read holding register at address 6: 0
+2025-07-10T06:50:05.942Z [DEBUG] Modbus read holding register at address 7: 0
+2025-07-10T06:50:05.943Z [DEBUG] Modbus read holding register at address 8: 0
+2025-07-10T06:50:05.944Z [DEBUG] Modbus read holding register at address 9: 0
+2025-07-10T06:50:05.941Z [DEBUG] Modbus read holding register at address 5: 0
+2025-07-10T06:50:05.935Z [DEBUG] Modbus read holding register at address 1: 0
+2025-07-10T06:50:06.979Z [DEBUG] Modbus read holding register at address 0: 0
+2025-07-10T06:50:06.980Z [DEBUG] Modbus read holding register at address 1: 0
+2025-07-10T06:50:06.981Z [DEBUG] Modbus read holding register at address 4: 0
+2025-07-10T06:50:06.981Z [DEBUG] Modbus read holding register at address 3: 0
+2025-07-10T06:50:06.982Z [DEBUG] Modbus read holding register at address 6: 0
+2025-07-10T06:50:06.981Z [DEBUG] Modbus read holding register at address 5: 0
+2025-07-10T06:50:06.982Z [DEBUG] Modbus read holding register at address 8: 0
+2025-07-10T06:50:06.980Z [DEBUG] Modbus read holding register at address 2: 0
+2025-07-10T06:50:06.982Z [DEBUG] Modbus read holding register at address 9: 0
+2025-07-10T06:50:06.982Z [DEBUG] Modbus read holding register at address 7: 0
+2025-07-10T06:50:08.012Z [DEBUG] Modbus read holding register at address 0: 0
+2025-07-10T06:50:08.013Z [DEBUG] Modbus read holding register at address 2: 0
+2025-07-10T06:50:08.013Z [DEBUG] Modbus read holding register at address 3: 0
+2025-07-10T06:50:08.013Z [DEBUG] Modbus read holding register at address 1: 0
+2025-07-10T06:50:08.014Z [DEBUG] Modbus read holding register at address 5: 0
+2025-07-10T06:50:08.014Z [DEBUG] Modbus read holding register at address 6: 0
+2025-07-10T06:50:08.015Z [DEBUG] Modbus read holding register at address 7: 0
+2025-07-10T06:50:08.015Z [DEBUG] Modbus read holding register at address 9: 0
+2025-07-10T06:50:08.015Z [DEBUG] Modbus read holding register at address 8: 0
+2025-07-10T06:50:08.014Z [DEBUG] Modbus read holding register at address 4: 0
+2025-07-10T06:50:09.039Z [DEBUG] Modbus read holding register at address 0: 0
+2025-07-10T06:50:09.041Z [DEBUG] Modbus read holding register at address 2: 0
+2025-07-10T06:50:09.042Z [DEBUG] Modbus read holding register at address 4: 0
+2025-07-10T06:50:09.041Z [DEBUG] Modbus read holding register at address 3: 0
+2025-07-10T06:50:09.042Z [DEBUG] Modbus read holding register at address 5: 0
+2025-07-10T06:50:09.042Z [DEBUG] Modbus read holding register at address 6: 0
+2025-07-10T06:50:09.040Z [DEBUG] Modbus read holding register at address 1: 0
+2025-07-10T06:50:09.043Z [DEBUG] Modbus read holding register at address 9: 0
+2025-07-10T06:50:09.042Z [DEBUG] Modbus read holding register at address 7: 0
+2025-07-10T06:50:09.043Z [DEBUG] Modbus read holding register at address 8: 0
+2025-07-10T06:50:10.068Z [DEBUG] Modbus read holding register at address 1: 0
+2025-07-10T06:50:10.069Z [DEBUG] Modbus read holding register at address 2: 0
+2025-07-10T06:50:10.072Z [DEBUG] Modbus read holding register at address 4: 0
+2025-07-10T06:50:10.073Z [DEBUG] Modbus read holding register at address 5: 0
+2025-07-10T06:50:10.069Z [DEBUG] Modbus read holding register at address 3: 0
+2025-07-10T06:50:10.075Z [DEBUG] Modbus read holding register at address 7: 0
+2025-07-10T06:50:10.075Z [DEBUG] Modbus read holding register at address 8: 0
+2025-07-10T06:50:10.076Z [DEBUG] Modbus read holding register at address 9: 0
+2025-07-10T06:50:10.074Z [DEBUG] Modbus read holding register at address 6: 0
+2025-07-10T06:50:10.067Z [DEBUG] Modbus read holding register at address 0: 0
+2025-07-10T06:50:11.092Z [DEBUG] Modbus read holding register at address 0: 0
+2025-07-10T06:50:11.093Z [DEBUG] Modbus read holding register at address 1: 0
+2025-07-10T06:50:11.093Z [DEBUG] Modbus read holding register at address 2: 0
+2025-07-10T06:50:11.093Z [DEBUG] Modbus read holding register at address 3: 0
+2025-07-10T06:50:11.094Z [DEBUG] Modbus read holding register at address 4: 0
+2025-07-10T06:50:11.094Z [DEBUG] Modbus read holding register at address 5: 0
+2025-07-10T06:50:11.094Z [DEBUG] Modbus read holding register at address 6: 0
+2025-07-10T06:50:11.094Z [DEBUG] Modbus read holding register at address 7: 0
+2025-07-10T06:50:11.095Z [DEBUG] Modbus read holding register at address 9: 0
+2025-07-10T06:50:11.094Z [DEBUG] Modbus read holding register at address 8: 0
+2025-07-10T06:50:11.432Z [DEBUG] Modbus external write request for address 3 with value 5
+2025-07-10T06:50:11.433Z [INFO] Published message: {"function":{"switch_ch3":false},"cmd":"write","source":"vega-SDK"}
+2025-07-10T06:50:11.433Z [INFO] CoreService: Published topic: test/GW/DK1/command, message: {"function":{"switch_ch3":false},"cmd":"write","source":"vega-SDK"}
+2025-07-10T06:50:11.433Z [INFO] Published topic: test/GW/DK1/command
+2025-07-10T06:50:12.151Z [DEBUG] Modbus read holding register at address 0: 0
+2025-07-10T06:50:12.156Z [DEBUG] Modbus read holding register at address 3: 0
+2025-07-10T06:50:12.157Z [DEBUG] Modbus read holding register at address 4: 0
+2025-07-10T06:50:12.158Z [DEBUG] Modbus read holding register at address 5: 0
+2025-07-10T06:50:12.159Z [DEBUG] Modbus read holding register at address 6: 0
+2025-07-10T06:50:12.160Z [DEBUG] Modbus read holding register at address 7: 0
+2025-07-10T06:50:12.161Z [DEBUG] Modbus read holding register at address 8: 0
+2025-07-10T06:50:12.152Z [DEBUG] Modbus read holding register at address 1: 0
+2025-07-10T06:50:12.155Z [DEBUG] Modbus read holding register at address 2: 0
+2025-07-10T06:50:12.161Z [DEBUG] Modbus read holding register at address 9: 0
+2025-07-10T06:50:13.164Z [DEBUG] Modbus read holding register at address 0: 0
+2025-07-10T06:50:13.165Z [DEBUG] Modbus read holding register at address 3: 0
+2025-07-10T06:50:13.164Z [DEBUG] Modbus read holding register at address 1: 0
+2025-07-10T06:50:13.166Z [DEBUG] Modbus read holding register at address 5: 0
+2025-07-10T06:50:13.167Z [DEBUG] Modbus read holding register at address 6: 0
+2025-07-10T06:50:13.167Z [DEBUG] Modbus read holding register at address 7: 0
+2025-07-10T06:50:13.168Z [DEBUG] Modbus read holding register at address 8: 0
+2025-07-10T06:50:13.165Z [DEBUG] Modbus read holding register at address 2: 0
+2025-07-10T06:50:13.168Z [DEBUG] Modbus read holding register at address 9: 0
+2025-07-10T06:50:13.166Z [DEBUG] Modbus read holding register at address 4: 0
+2025-07-10T06:50:14.193Z [DEBUG] Modbus read holding register at address 0: 0
+2025-07-10T06:50:14.194Z [DEBUG] Modbus read holding register at address 2: 0
+2025-07-10T06:50:14.195Z [DEBUG] Modbus read holding register at address 3: 0
+2025-07-10T06:50:14.196Z [DEBUG] Modbus read holding register at address 4: 0
+2025-07-10T06:50:14.197Z [DEBUG] Modbus read holding register at address 5: 0
+2025-07-10T06:50:14.197Z [DEBUG] Modbus read holding register at address 6: 0
+2025-07-10T06:50:14.198Z [DEBUG] Modbus read holding register at address 7: 0
+2025-07-10T06:50:14.199Z [DEBUG] Modbus read holding register at address 8: 0
+2025-07-10T06:50:14.200Z [DEBUG] Modbus read holding register at address 9: 0
+2025-07-10T06:50:14.194Z [DEBUG] Modbus read holding register at address 1: 0
+2025-07-10T06:50:15.224Z [DEBUG] Modbus read holding register at address 0: 0
+2025-07-10T06:50:15.226Z [DEBUG] Modbus read holding register at address 1: 0
+2025-07-10T06:50:15.226Z [DEBUG] Modbus read holding register at address 2: 0
+2025-07-10T06:50:15.227Z [DEBUG] Modbus read holding register at address 3: 0
+2025-07-10T06:50:15.228Z [DEBUG] Modbus read holding register at address 4: 0
+2025-07-10T06:50:15.229Z [DEBUG] Modbus read holding register at address 5: 0
+2025-07-10T06:50:15.229Z [DEBUG] Modbus read holding register at address 6: 0
+2025-07-10T06:50:15.230Z [DEBUG] Modbus read holding register at address 7: 0
+2025-07-10T06:50:15.231Z [DEBUG] Modbus read holding register at address 8: 0
+2025-07-10T06:50:15.232Z [DEBUG] Modbus read holding register at address 9: 0
+2025-07-10T06:53:20.601Z [INFO] Registered device logic for type: switch
+2025-07-10T06:53:20.599Z [INFO] Registered device logic for type: aircondition
+2025-07-10T06:53:20.957Z [INFO] MQTT reconnect period: 1000 ms
+2025-07-10T06:53:20.601Z [INFO] Registered device logic for type: panel
+2025-07-10T06:53:21.006Z [INFO] API server listening at http://localhost:3000
+2025-07-10T06:53:21.008Z [INFO] Modbus server initialized.
+2025-07-10T06:53:21.009Z [INFO] Modbus server started on 127.0.0.1:502
+2025-07-10T06:53:21.009Z [INFO] CoreService: Modbus server started.
+2025-07-10T06:53:21.010Z [INFO] CoreService: All services started.
+2025-07-10T06:53:21.013Z [ERROR] MQTT connection error:
+2025-07-10T06:53:21.016Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:21.017Z [INFO] MQTT connection closed
+2025-07-10T06:53:21.018Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:22.031Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:22.034Z [ERROR] MQTT connection error:
+2025-07-10T06:53:22.035Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:22.040Z [INFO] MQTT connection closed
+2025-07-10T06:53:22.041Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:23.055Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:23.059Z [ERROR] MQTT connection error:
+2025-07-10T06:53:23.060Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:23.062Z [INFO] MQTT connection closed
+2025-07-10T06:53:23.062Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:24.076Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:24.080Z [ERROR] MQTT connection error:
+2025-07-10T06:53:24.081Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:24.082Z [INFO] MQTT connection closed
+2025-07-10T06:53:24.083Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:25.088Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:25.091Z [ERROR] MQTT connection error:
+2025-07-10T06:53:25.091Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:25.092Z [INFO] MQTT connection closed
+2025-07-10T06:53:25.092Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:26.108Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:26.112Z [ERROR] MQTT connection error:
+2025-07-10T06:53:26.113Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:26.114Z [INFO] MQTT connection closed
+2025-07-10T06:53:26.114Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:27.121Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:27.123Z [ERROR] MQTT connection error:
+2025-07-10T06:53:27.123Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:27.124Z [INFO] MQTT connection closed
+2025-07-10T06:53:27.124Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:28.134Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:28.136Z [ERROR] MQTT connection error:
+2025-07-10T06:53:28.139Z [INFO] MQTT connection closed
+2025-07-10T06:53:28.138Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:28.140Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:29.145Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:29.148Z [ERROR] MQTT connection error:
+2025-07-10T06:53:29.148Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:29.149Z [INFO] MQTT connection closed
+2025-07-10T06:53:29.149Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:30.165Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:30.175Z [ERROR] MQTT connection error:
+2025-07-10T06:53:30.199Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:30.200Z [INFO] MQTT connection closed
+2025-07-10T06:53:30.200Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:31.214Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:31.217Z [INFO] MQTT connection closed
+2025-07-10T06:53:31.216Z [ERROR] MQTT connection error:
+2025-07-10T06:53:31.216Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:31.217Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:32.229Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:32.232Z [ERROR] MQTT connection error:
+2025-07-10T06:53:32.232Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:32.233Z [INFO] MQTT connection closed
+2025-07-10T06:53:32.233Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:32.258Z [INFO] .env updated, restarting service...
+2025-07-10T06:53:32.264Z [ERROR] Failed to restart service after .env update:
+2025-07-10T06:53:33.243Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:33.245Z [ERROR] MQTT connection error:
+2025-07-10T06:53:33.245Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:33.245Z [INFO] MQTT connection closed
+2025-07-10T06:53:33.246Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:34.248Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:34.251Z [ERROR] MQTT connection error:
+2025-07-10T06:53:34.258Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:34.259Z [INFO] MQTT connection closed
+2025-07-10T06:53:34.260Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:34.929Z [INFO] Received request to restart service.
+2025-07-10T06:53:34.930Z [ERROR] CoreService: Failed to stop services:
+2025-07-10T06:53:34.931Z [ERROR] Failed to restart service:
+2025-07-10T06:53:35.263Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:35.267Z [ERROR] MQTT connection error:
+2025-07-10T06:53:35.268Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:35.269Z [INFO] MQTT connection closed
+2025-07-10T06:53:35.278Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:36.269Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:36.275Z [ERROR] MQTT connection error:
+2025-07-10T06:53:36.275Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:36.278Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:36.277Z [INFO] MQTT connection closed
+2025-07-10T06:53:37.282Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:37.286Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:37.285Z [ERROR] MQTT connection error:
+2025-07-10T06:53:37.292Z [INFO] MQTT connection closed
+2025-07-10T06:53:37.292Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:38.300Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:38.302Z [ERROR] MQTT connection error:
+2025-07-10T06:53:38.303Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:38.306Z [INFO] MQTT connection closed
+2025-07-10T06:53:38.307Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:39.314Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:39.317Z [ERROR] MQTT connection error:
+2025-07-10T06:53:39.318Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:39.319Z [INFO] MQTT connection closed
+2025-07-10T06:53:39.321Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:40.327Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:40.329Z [ERROR] MQTT connection error:
+2025-07-10T06:53:40.330Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:40.331Z [INFO] MQTT connection closed
+2025-07-10T06:53:40.332Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:41.337Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:41.340Z [ERROR] MQTT connection error:
+2025-07-10T06:53:41.340Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:41.341Z [INFO] MQTT connection closed
+2025-07-10T06:53:41.342Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:42.348Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:42.351Z [ERROR] MQTT connection error:
+2025-07-10T06:53:42.351Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:42.352Z [INFO] MQTT connection closed
+2025-07-10T06:53:42.354Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:43.359Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:43.362Z [ERROR] MQTT connection error:
+2025-07-10T06:53:43.363Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:43.364Z [INFO] MQTT connection closed
+2025-07-10T06:53:43.364Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:44.379Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:44.390Z [INFO] MQTT connection closed
+2025-07-10T06:53:44.383Z [ERROR] MQTT connection error:
+2025-07-10T06:53:44.391Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:44.384Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:45.399Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:45.400Z [ERROR] MQTT connection error:
+2025-07-10T06:53:45.400Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:45.401Z [INFO] MQTT connection closed
+2025-07-10T06:53:45.401Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:46.413Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:46.416Z [ERROR] MQTT connection error:
+2025-07-10T06:53:46.417Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:46.418Z [INFO] MQTT connection closed
+2025-07-10T06:53:46.419Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:47.429Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:47.432Z [ERROR] MQTT connection error:
+2025-07-10T06:53:47.433Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:47.434Z [INFO] MQTT connection closed
+2025-07-10T06:53:47.435Z [INFO] CoreService: MQTT disconnected.
+2025-07-10T06:53:48.446Z [WARN] MQTT client is trying to reconnect.
+2025-07-10T06:53:48.448Z [ERROR] MQTT connection error:
+2025-07-10T06:53:48.448Z [ERROR] CoreService: MQTT service encountered an error:
+2025-07-10T06:53:48.449Z [INFO] MQTT connection closed
+2025-07-10T06:53:48.449Z [INFO] CoreService: MQTT disconnected.
