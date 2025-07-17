@@ -1,9 +1,14 @@
 require("dotenv").config();
+
+// 確保在 pkg 打包的執行檔中 NODE_ENV 被正確設定
+if (!process.env.NODE_ENV) {
+  process.env.NODE_ENV = "production";
+}
+
 const mqtt2modbus = require("./lib/core");
 const express = require("express");
 const bodyParser = require("body-parser");
 const { defaultLogger: logger } = require("./lib/logger"); // 引入 logger
-const apiRoutes = require("./routes/api");
 
 let Service; // 宣告 Service 變數
 
@@ -27,7 +32,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // 在啟動時初始化服務
 Service = loadConfigAndInitializeService();
-app.use("/api", apiRoutes(Service));
 
 // API 端點來重啟服務
 app.post("/restart", async (req, res) => {

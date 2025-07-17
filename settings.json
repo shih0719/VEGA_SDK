@@ -1,0 +1,17 @@
+{
+  "mqtt": {
+    "url": "mqtt://192.168.23.58:1883",
+    "options": {
+      "clientId": "mqttjs0234",
+      "username": "user",
+      "password": "password",
+      "reconnectPeriod": 1000,
+      "connectTimeout": 60000,
+      "keepalive": 60
+    }
+  },
+  "modbus": {
+    "host": "127.0.0.1",
+    "port": 502
+  }
+}
