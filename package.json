@@ -9,7 +9,7 @@
     "start": "cross-env NODE_ENV=production node index.js",
     "test": "jest",
     "pkg": "cross-env NODE_ENV=production pkg .",
-    "cli": "cross-env NODE_ENV=production node lib/cmd/cli.js"
+    "cli": "node lib/cmd/cli.js"
   },
   "pkg": {
     "scripts": [

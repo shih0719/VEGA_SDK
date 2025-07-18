@@ -61,3 +61,24 @@
 2025/7/18 下午6:03:46 [INFO] Subscribed to topic: test/GW/DK2
 2025/7/18 下午6:04:00 [INFO] 互動式介面已完全關閉。
 2025/7/18 下午6:04:28 [INFO] 接收到終止訊號或結束命令，腳本正在關閉中...
+2025/7/18 下午6:13:40 [INFO] NODE_ENV 未設定，預設為開發環境。
+2025/7/18 下午6:13:40 [INFO] Registered device logic for type: aircondition
+2025/7/18 下午6:13:40 [INFO] Registered device logic for type: HPD
+2025/7/18 下午6:13:40 [INFO] Registered device logic for type: panel
+2025/7/18 下午6:13:41 [INFO] MQTT reconnect period: 1000 ms
+2025/7/18 下午6:13:41 [INFO] Modbus server initialized.
+2025/7/18 下午6:13:40 [INFO] Registered device logic for type: switch
+2025/7/18 下午6:13:41 [INFO] CLI 應用程式啟動中...
+2025/7/18 下午6:13:41 [INFO] Modbus server started on 127.0.0.1:502
+2025/7/18 下午6:13:41 [INFO] CoreService: Modbus server started.
+2025/7/18 下午6:13:41 [INFO] CoreService: All services started.
+2025/7/18 下午6:13:41 [INFO] MQTT connected to
+2025/7/18 下午6:13:41 [INFO] CoreService: MQTT connected.
+2025/7/18 下午6:13:41 [INFO] Subscribed to topic: test/GW/DK3
+2025/7/18 下午6:13:41 [INFO] Subscribed to topic: test/GW/DK4
+2025/7/18 下午6:13:41 [INFO] Subscribed to topic: eastsoft/0000IPX8/00008IBU
+2025/7/18 下午6:13:41 [INFO] Subscribed to topic: test/GW/DK2
+2025/7/18 下午6:13:41 [INFO] Subscribed to topic: test/GW/DK1
+2025/7/18 下午6:13:47 [INFO] 接收到 "e" 或 "exit" 命令，正在執行結束腳本...
+2025/7/18 下午6:13:47 [INFO] 接收到終止訊號或結束命令，腳本正在關閉中...
+2025/7/18 下午6:13:47 [INFO] 互動式介面已完全關閉。
