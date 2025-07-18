@@ -8,7 +8,8 @@
     "dev": "cross-env NODE_ENV=development node index.js",
     "start": "cross-env NODE_ENV=production node index.js",
     "test": "jest",
-    "pkg": "cross-env NODE_ENV=production pkg ."
+    "pkg": "cross-env NODE_ENV=production pkg .",
+    "cli": "cross-env NODE_ENV=production node lib/cmd/cli.js"
   },
   "pkg": {
     "scripts": [
@@ -32,7 +33,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "commander": "^13.0.0",
+    "commander": "^13.1.0",
     "dotenv": "^17.1.0",
     "events": "^3.3.0",
     "express": "^5.1.0",

@@ -1,58 +1,13 @@
-require("dotenv").config();
-
 // 確保在 pkg 打包的執行檔中 NODE_ENV 被正確設定
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = "production";
 }
-
+const config = require("./lib/config");
 const mqtt2modbus = require("./lib/core");
-const express = require("express");
-const bodyParser = require("body-parser");
-const { defaultLogger: logger } = require("./lib/logger"); // 引入 logger
 
-let Service; // 宣告 Service 變數
+const Service = new mqtt2modbus(config); // 宣告 Service 變數
 
 // 載入設定並初始化服務的函數
-const loadConfigAndInitializeService = () => {
-  // 重新載入 .env 檔案，確保 process.env 中的變數是最新的
-  // { override: true } 確保新的變數會覆寫舊的
-  require("dotenv").config({ override: true });
-  // 清除 require 緩存，確保每次都載入最新的設定
-  delete require.cache[require.resolve("./lib/config")];
-  const config = require("./lib/config");
-  const mqtt2modbus = require("./lib/core");
-  return new mqtt2modbus(config);
-};
-
-const app = express();
-const port = process.env.API_PORT || 3000;
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// 在啟動時初始化服務
-Service = loadConfigAndInitializeService();
-
-// API 端點來重啟服務
-app.post("/restart", async (req, res) => {
-  logger.info("Received request to restart service.");
-  try {
-    if (Service) {
-      await Service.stop(); // 停止舊的服務實例
-      logger.info("Old service instance stopped.");
-    }
-  } catch (error) {
-    logger.error("Failed to restart service:", error);
-  }
-  Service = loadConfigAndInitializeService(); // 重新載入設定並建立新的服務實例
-  await Service.start(); // 啟動新的服務實例
-  logger.info("New service instance started successfully.");
-  res.status(200).send("Service restarted successfully.");
-});
-
-app.listen(port, () => {
-  logger.info(`API server listening at http://localhost:${port}`);
-});
 
 // 啟動服務
 Service.start();

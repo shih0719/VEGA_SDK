@@ -14,3 +14,50 @@
 2025-07-17T03:43:57.263Z [INFO] Subscribed to topic: eastsoft/0000IPX8/00008IBU
 2025-07-17T03:43:57.261Z [INFO] Subscribed to topic: test/GW/DK2
 2025-07-17T03:43:57.262Z [INFO] Subscribed to topic: test/GW/DK3
+2025-07-18T09:42:45.708Z [INFO] CLI 應用程式啟動中...
+2025-07-18T09:43:24.045Z [INFO] 接收到 "e" 或 "exit" 命令，正在執行結束腳本...
+2025-07-18T09:43:24.046Z [INFO] 接收到終止訊號或結束命令，腳本正在關閉中...
+2025-07-18T09:43:24.046Z [INFO] 互動式介面已完全關閉。
+2025-07-18T09:44:19.988Z [INFO] CLI 應用程式啟動中...
+2025-07-18T09:44:20.803Z [INFO] 互動式介面已完全關閉。
+2025-07-18T10:01:34.406Z [INFO] NODE_ENV 未設定，預設為開發環境。
+2025-07-18T10:01:34.426Z [INFO] Registered device logic for type: aircondition
+2025-07-18T10:01:34.427Z [INFO] Registered device logic for type: HPD
+2025-07-18T10:01:34.427Z [INFO] Registered device logic for type: switch
+2025-07-18T10:01:34.426Z [INFO] Registered device logic for type: panel
+2025-07-18T10:01:34.690Z [INFO] CLI 應用程式啟動中...
+2025-07-18T10:01:34.634Z [INFO] MQTT reconnect period: 1000 ms
+2025-07-18T10:01:34.704Z [INFO] Modbus server initialized.
+2025-07-18T10:01:34.705Z [INFO] Modbus server started on 127.0.0.1:502
+2025-07-18T10:01:34.706Z [INFO] CoreService: Modbus server started.
+2025-07-18T10:01:34.706Z [INFO] CoreService: All services started.
+2025-07-18T10:01:34.723Z [INFO] MQTT connected to
+2025-07-18T10:01:34.723Z [INFO] CoreService: MQTT connected.
+2025-07-18T10:01:34.725Z [INFO] Subscribed to topic: test/GW/DK2
+2025-07-18T10:01:34.726Z [INFO] Subscribed to topic: eastsoft/0000IPX8/00008IBU
+2025-07-18T10:01:34.725Z [INFO] Subscribed to topic: test/GW/DK1
+2025-07-18T10:01:34.726Z [INFO] Subscribed to topic: test/GW/DK3
+2025-07-18T10:01:34.726Z [INFO] Subscribed to topic: test/GW/DK4
+2025-07-18T10:02:06.701Z [INFO] 接收到 "e" 或 "exit" 命令，正在執行結束腳本...
+2025-07-18T10:02:06.701Z [INFO] 接收到終止訊號或結束命令，腳本正在關閉中...
+2025-07-18T10:02:06.702Z [INFO] 互動式介面已完全關閉。
+2025/7/18 下午6:03:46 [INFO] NODE_ENV 未設定，預設為開發環境。
+2025/7/18 下午6:03:46 [INFO] Registered device logic for type: aircondition
+2025/7/18 下午6:03:46 [INFO] Registered device logic for type: panel
+2025/7/18 下午6:03:46 [INFO] Registered device logic for type: switch
+2025/7/18 下午6:03:46 [INFO] Registered device logic for type: HPD
+2025/7/18 下午6:03:46 [INFO] MQTT reconnect period: 1000 ms
+2025/7/18 下午6:03:46 [INFO] CLI 應用程式啟動中...
+2025/7/18 下午6:03:46 [INFO] Modbus server initialized.
+2025/7/18 下午6:03:46 [INFO] Modbus server started on 127.0.0.1:502
+2025/7/18 下午6:03:46 [INFO] CoreService: Modbus server started.
+2025/7/18 下午6:03:46 [INFO] CoreService: All services started.
+2025/7/18 下午6:03:46 [INFO] MQTT connected to
+2025/7/18 下午6:03:46 [INFO] Subscribed to topic: test/GW/DK1
+2025/7/18 下午6:03:46 [INFO] CoreService: MQTT connected.
+2025/7/18 下午6:03:46 [INFO] Subscribed to topic: test/GW/DK3
+2025/7/18 下午6:03:46 [INFO] Subscribed to topic: eastsoft/0000IPX8/00008IBU
+2025/7/18 下午6:03:46 [INFO] Subscribed to topic: test/GW/DK4
+2025/7/18 下午6:03:46 [INFO] Subscribed to topic: test/GW/DK2
+2025/7/18 下午6:04:00 [INFO] 互動式介面已完全關閉。
+2025/7/18 下午6:04:28 [INFO] 接收到終止訊號或結束命令，腳本正在關閉中...
