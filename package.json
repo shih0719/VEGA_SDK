@@ -2,33 +2,19 @@
   "name": "vega-sdk",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/core.js",
+  "main": "CoreModule.js",
   "bin": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development node index.js",
     "start": "cross-env NODE_ENV=production node index.js",
     "test": "jest",
-    "pkg": "cross-env NODE_ENV=production pkg .",
     "cli": "node lib/cmd/cli.js"
   },
-  "pkg": {
-    "scripts": [
-      "lib/**/*.js",
-      "routes/**/*.js",
-      "events/**/*.js"
-    ],
-    "assets": [
-      "config_map.json",
-      "exp.env",
-      "node_modules/@serialport/bindings-cpp/prebuilds/win32-x64/*.node"
-    ],
-    "targets": [
-      "node18-win-x64",
-      "node18-linux-x64",
-      "node18-macos-x64"
-    ],
-    "outputPath": "dist"
-  },
+  "assets": [
+    "config_map.json",
+    "exp.env",
+    "node_modules/@serialport/bindings-cpp/prebuilds/win32-x64/*.node"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -42,7 +28,6 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "jest": "^30.0.4",
-    "pkg": "^5.8.1"
+    "jest": "^30.0.4"
   }
 }
