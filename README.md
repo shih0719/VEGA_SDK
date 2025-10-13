@@ -2,12 +2,6 @@
 
 This project now includes an API for managing `exp.env` and `config_map.json`.
 
-### Starting the API Server
-
-The API server runs on port 3000 by default, or the port specified in the `API_PORT` environment variable in `exp.env`.
-
-To start the API server, ensure `api.js` is included in `index.js` (which it is by default after this update), and then run the main application:
-
 ```bash
 npm start
 ```
@@ -47,3 +41,17 @@ npm start
   }
   ```
 - **Description:** Overwrites the entire `config_map.json` file with the provided JSON data.
+
+## 使用 PM2 管理運行
+
+pm2 start ecosystem.config.js --env production
+
+### windows PM2
+
+1. 在 CMD 或 PowerShell (以系統管理員身份運行) 中執行
+   npm install pm2-windows-startup -g
+2. 儲存當前所有 PM2 正在運行的程序
+   pm2 save
+3. 在 CMD 或 PowerShell (以系統管理員身份運行) 中執行
+   pm2-startup install
+4. 移除自動啟動服務: pm2-startup uninstall
