@@ -3,7 +3,6 @@ module.exports = {
     {
       name: "VEGA-SDK",
       script: "index.js",
-      instances: 1, // 單實例運行
       watch: false,
       max_memory_restart: "1G",
       env_file: ".env", // 指定 .env 文件
