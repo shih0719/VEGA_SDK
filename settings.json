@@ -2,7 +2,7 @@
   "mqtt": {
     "url": "mqtt://192.168.23.58:1883",
     "options": {
-      "clientId": "mqttjs0234",
+      "clientId": "mqttjs0235",
       "username": "user",
       "password": "password",
       "reconnectPeriod": 1000,

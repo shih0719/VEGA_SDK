@@ -30,5 +30,17 @@
         "rev_speed": 16
       }
     }
+  ],
+  [
+    "test/GW/DK5",
+    {
+      "type": "meter",
+      "channels": {
+        "switch_ch1": 19,
+        "electricity_high": 20,
+        "electricity_low": 21,
+        "set_init_electricity": 22
+      }
+    }
   ]
 ]
