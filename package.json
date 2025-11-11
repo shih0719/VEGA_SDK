@@ -33,7 +33,8 @@
     "dotenv": "^17.1.0",
     "events": "^3.3.0",
     "modbus-serial": "^8.0.17",
-    "mqtt": "^5.10.3"
+    "mqtt": "^5.10.3",
+    "chalk": "^4.1.2"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
