@@ -7,8 +7,6 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development node index.js",
     "start": "cross-env NODE_ENV=production node index.js",
-    "test": "jest",
-    "cli": "node lib/cmd/cli.js",
     "ecosystem": "pm2 start ecosystem.config.js --env production"
   },
   "assets": [
@@ -24,11 +22,10 @@
     "dotenv": "^17.1.0",
     "events": "^3.3.0",
     "modbus-serial": "^8.0.17",
-    "mqtt": "^5.10.3",
-    "xlsx": "^0.18.5"
+    "mqtt": "^5.10.3"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "jest": "^30.0.4"
+    "xlsx": "^0.18.5"
   }
 }

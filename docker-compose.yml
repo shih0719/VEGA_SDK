@@ -1,40 +1,27 @@
-version: "3.8"
+version: '3.8'
 
 services:
   vega-sdk:
-    image: vega-sdk:latest
-    container_name: vega-sdk-prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vega-sdk
     restart: unless-stopped
     ports:
       - "502:502"
     environment:
       - NODE_ENV=production
-      - TZ=Asia/Taipei
     volumes:
-      - /opt/vega-sdk/config:/home/vega/.config/VEGA_SDK
-      - /opt/vega-sdk/logs:/app/logs
+      # 掛載配置目錄
+      - ./configs:/app/configs
+      # 掛載生產環境日誌目錄
+      - ./logs/prod:/app/logs/prod
+      # 掛載開發環境日誌目錄（可選）
+      - ./logs/dev:/app/logs/dev
+      # 掛載數據目錄
       - vega-data:/app/data
     networks:
       - vega-network
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "10m"
-        max-file: "3"
-    deploy:
-      resources:
-        limits:
-          memory: 1G
-          cpus: "1.0"
-        reservations:
-          memory: 512M
-          cpus: "0.5"
-    healthcheck:
-      test: ["CMD", "node", "-e", "process.exit(0)"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 40s
 
 networks:
   vega-network:
