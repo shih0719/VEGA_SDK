@@ -23,7 +23,6 @@
     "commander": "^13.1.0",
     "dotenv": "^17.1.0",
     "events": "^3.3.0",
-    "express": "^5.1.0",
     "modbus-serial": "^8.0.17",
     "mqtt": "^5.10.3",
     "xlsx": "^0.18.5"
