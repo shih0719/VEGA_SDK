@@ -16,6 +16,13 @@ RUN npm install --omit=dev && \
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S vega -u 1001 -G nodejs
 
+# 確保所有必要目錄存在（重要！）
+RUN mkdir -p /app/configs \
+             /app/logs/prod \
+             /app/logs/dev \
+             /app/data && \
+    chown -R vega:nodejs /app
+
 # 複製應用代碼
 COPY --chown=vega:nodejs . .
 

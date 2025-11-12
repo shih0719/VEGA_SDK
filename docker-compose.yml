@@ -7,6 +7,9 @@ services:
       dockerfile: Dockerfile
     container_name: vega-sdk
     restart: unless-stopped
+    init: true
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     ports:
       - "502:502"
     environment:
@@ -18,8 +21,6 @@ services:
       - ./logs/prod:/app/logs/prod
       # 掛載開發環境日誌目錄（可選）
       - ./logs/dev:/app/logs/dev
-      # 掛載數據目錄
-      - vega-data:/app/data
     networks:
       - vega-network
 
