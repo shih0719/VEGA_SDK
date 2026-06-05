@@ -528,8 +528,9 @@ function switchTab(tabName) {
   const panel = document.getElementById(`tab-${tabName}`);
   if (panel) panel.classList.add("active");
 
-  // Activate the clicked button
-  event.target.classList.add("active");
+  // Activate the correct button based on tab name
+  document.querySelectorAll(".tab-btn")[tabName === "config" ? 0 : 1].classList.add("active");
+  if (tabName === "settings") loadSettings();
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
