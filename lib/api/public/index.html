@@ -284,6 +284,37 @@
   <div id="device-list"></div>
   <div id="empty-state">尚無裝置設定，點擊「新增裝置」開始新增。</div>
 </div>
+
+<div id="tab-settings" class="tab-panel">
+  <div class="card" style="max-width:520px;margin:24px auto;">
+    <div class="card-header"><span class="topic-label">連線設定</span></div>
+    <div class="card-body">
+      <div class="form-group">
+        <label>MQTT Broker URL</label>
+        <input id="s-mqttUrl" type="text" placeholder="mqtt://host:1883" />
+      </div>
+      <div class="form-group">
+        <label>MQTT 使用者名稱</label>
+        <input id="s-mqttUsername" type="text" />
+      </div>
+      <div class="form-group">
+        <label>MQTT 密碼</label>
+        <div style="display:flex;gap:8px;">
+          <input id="s-mqttPassword" type="password" style="flex:1;" />
+          <button class="btn-ghost" style="padding:7px 12px;white-space:nowrap;" onclick="togglePassword()">顯示</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Modbus Port</label>
+        <input id="s-modbusPort" type="number" min="1" max="65535" />
+      </div>
+      <div class="error-msg" id="settings-error"></div>
+      <div style="margin-top:20px;">
+        <button class="btn-success" onclick="saveSettings()">儲存並重啟</button>
+      </div>
+    </div>
+  </div>
+</div>
 </main>
 
 <!-- Add Device Modal -->
@@ -559,7 +590,79 @@ document.getElementById("new-topic").addEventListener("keydown", function(e) {
   if (e.key === "Enter") confirmAdd();
 });
 
+// ── Settings ─────────────────────────────────────────────────────────────────
+
+function loadSettings() {
+  fetch("/api/settings")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("s-mqttUrl").value = data.mqtt?.url || "";
+      document.getElementById("s-mqttUsername").value = data.mqtt?.username || "";
+      document.getElementById("s-mqttPassword").value = data.mqtt?.password || "";
+      document.getElementById("s-modbusPort").value = data.modbus?.port || 502;
+    })
+    .catch(e => console.error("Failed to load settings:", e));
+}
+
+async function saveSettings() {
+  const errorEl = document.getElementById("settings-error");
+  errorEl.textContent = "";
+
+  const mqttUrl = document.getElementById("s-mqttUrl").value.trim();
+  const mqttUsername = document.getElementById("s-mqttUsername").value.trim();
+  const mqttPassword = document.getElementById("s-mqttPassword").value.trim();
+  const modbusPort = parseInt(document.getElementById("s-modbusPort").value, 10);
+
+  if (!mqttUrl) { errorEl.textContent = "MQTT Broker URL 不可為空"; return; }
+  if (isNaN(modbusPort) || modbusPort < 1 || modbusPort > 65535) {
+    errorEl.textContent = "Modbus Port 必須為 1-65535 的數字";
+    return;
+  }
+
+  try {
+    showReconnectOverlay();
+    const res = await fetch("/api/settings", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        mqtt: { url: mqttUrl, username: mqttUsername, password: mqttPassword },
+        modbus: { port: modbusPort },
+      }),
+    });
+    if (!res.ok) throw new Error("Save failed");
+  } catch (e) {
+    hideReconnectOverlay();
+    errorEl.textContent = "儲存失敗：" + e.message;
+  }
+}
+
+function togglePassword() {
+  const input = document.getElementById("s-mqttPassword");
+  const btn = event.target;
+  if (input.type === "password") {
+    input.type = "text";
+    btn.textContent = "隱藏";
+  } else {
+    input.type = "password";
+    btn.textContent = "顯示";
+  }
+}
+
+function showReconnectOverlay() {
+  document.getElementById("reconnect-overlay").classList.remove("hidden");
+}
+
+function hideReconnectOverlay() {
+  document.getElementById("reconnect-overlay").classList.add("hidden");
+}
+
 init();
 </script>
+
+<div class="reconnect-overlay hidden" id="reconnect-overlay">
+  <div class="spinner"></div>
+  <div id="reconnect-msg">設定已儲存，服務重新啟動中…</div>
+</div>
+
 </body>
 </html>
