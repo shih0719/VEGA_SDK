@@ -42,5 +42,14 @@
         "set_init_electricity": 22
       }
     }
+  ],
+  [
+    "test/P1/DK1",
+    {
+      "type": "demo",
+      "channels": {
+        "channel": 8
+      }
+    }
   ]
 ]

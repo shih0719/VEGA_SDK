@@ -1,0 +1,154 @@
+[
+  {
+    "deviceType": "switch",
+    "readOnly": false,
+    "defaultTransform": "boolean_to_int",
+    "fields": []
+  },
+  {
+    "deviceType": "aircondition",
+    "readOnly": false,
+    "fields": [
+      {
+        "name": "power_on",
+        "read": "boolean_to_int",
+        "write": "int_to_boolean"
+      },
+      {
+        "name": "temperature",
+        "read": "scale",
+        "scaleFactor": 10,
+        "write": "scale_inverse",
+        "writeScaleFactor": 10
+      },
+      {
+        "name": "current_temp",
+        "read": "scale",
+        "scaleFactor": 10
+      },
+      {
+        "name": "humidness",
+        "read": "scale",
+        "scaleFactor": 10
+      },
+      {
+        "name": "model",
+        "read": "enum",
+        "enumMap": {
+          "0": "cold",
+          "1": "heat",
+          "2": "fan"
+        },
+        "write": "enum_reverse",
+        "writeEnumMap": {
+          "cold": 0,
+          "heat": 1,
+          "fan": 2
+        }
+      },
+      {
+        "name": "rev_speed",
+        "read": "enum",
+        "enumMap": {
+          "0": "auto",
+          "1": "low",
+          "2": "middle",
+          "3": "high"
+        },
+        "write": "enum_reverse",
+        "writeEnumMap": {
+          "auto": 0,
+          "low": 1,
+          "middle": 2,
+          "high": 3
+        }
+      }
+    ]
+  },
+  {
+    "deviceType": "panel",
+    "readOnly": false,
+    "fields": [
+      {
+        "name": "switch_ch1",
+        "read": "boolean_to_int",
+        "write": "int_to_boolean"
+      },
+      {
+        "name": "button_id",
+        "read": "passthrough",
+        "write": "passthrough"
+      }
+    ]
+  },
+  {
+    "deviceType": "HPD",
+    "readOnly": true,
+    "fields": [
+      {
+        "name": "people",
+        "read": "boolean_to_int"
+      },
+      {
+        "name": "temperature",
+        "read": "scale",
+        "scaleFactor": 10
+      },
+      {
+        "name": "illumination",
+        "read": "passthrough"
+      }
+    ]
+  },
+  {
+    "deviceType": "meter",
+    "readOnly": false,
+    "fields": [
+      {
+        "name": "electricity",
+        "read": "scale_split32",
+        "scaleFactor": 100,
+        "highKey": "electricity_high",
+        "lowKey": "electricity_low"
+      },
+      {
+        "name": "power",
+        "read": "scale_split32",
+        "scaleFactor": 10000,
+        "highKey": "power_high",
+        "lowKey": "power_low"
+      },
+      {
+        "name": "current",
+        "read": "scale",
+        "scaleFactor": 1000
+      },
+      {
+        "name": "voltage",
+        "read": "scale",
+        "scaleFactor": 10
+      },
+      {
+        "name": "switch_ch1",
+        "read": "boolean_to_int",
+        "write": "int_to_boolean"
+      },
+      {
+        "name": "set_init_electricity",
+        "read": "skip",
+        "write": "assert_one_to_zero"
+      }
+    ]
+  },
+  {
+    "deviceType": "demo",
+    "readOnly": false,
+    "fields": [
+      {
+        "name": "channel",
+        "read": "boolean_to_int",
+        "write": "int_to_boolean"
+      }
+    ]
+  }
+]

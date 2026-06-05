@@ -270,8 +270,9 @@
   <span id="status">載入中…</span>
 </header>
 <nav class="tabs">
-  <button class="tab-btn active" onclick="switchTab('config')">Config Map</button>
-  <button class="tab-btn" onclick="switchTab('settings')">設定</button>
+  <button class="tab-btn active" data-tab="config"   onclick="switchTab('config')">Config Map</button>
+  <button class="tab-btn"        data-tab="settings" onclick="switchTab('settings')">設定</button>
+  <button class="tab-btn"        data-tab="logic"    onclick="switchTab('logic')">設備邏輯</button>
 </nav>
 
 <main>
@@ -311,6 +312,61 @@
       <div class="error-msg" id="settings-error"></div>
       <div style="margin-top:20px;">
         <button class="btn-success" onclick="saveSettings()">儲存並重啟</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="tab-logic" class="tab-panel">
+  <div style="max-width:980px;margin:0 auto;">
+    <div class="toolbar" style="align-items:center;flex-wrap:wrap;">
+      <label style="font-size:0.875rem;font-weight:600;white-space:nowrap;">設備類型：</label>
+      <select id="logic-device-select" style="width:auto;" onchange="switchLogicDevice(parseInt(this.value))"></select>
+      <button class="btn-ghost" onclick="addLogicDevice()">＋ 新增設備</button>
+      <button class="btn-danger" onclick="deleteLogicDevice()">刪除此設備</button>
+      <div style="flex:1;"></div>
+      <button class="btn-success" onclick="saveDeviceLogic()">儲存</button>
+    </div>
+    <div id="logic-error" style="font-size:0.8rem;min-height:1.4em;margin-bottom:8px;"></div>
+
+    <div class="card" style="margin-bottom:16px;">
+      <div class="card-body" style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;">
+        <div style="display:flex;gap:8px;align-items:center;">
+          <label style="font-size:0.8rem;font-weight:600;">deviceType</label>
+          <input id="ld-type" style="width:150px;" onblur="updateDeviceMeta()" />
+        </div>
+        <div style="display:flex;gap:6px;align-items:center;">
+          <input type="checkbox" id="ld-readonly" onchange="updateDeviceMeta()" />
+          <label for="ld-readonly" style="font-size:0.8rem;font-weight:600;cursor:pointer;">readOnly</label>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <label style="font-size:0.8rem;font-weight:600;">未列欄位預設 read</label>
+          <select id="ld-default-transform" onchange="updateDeviceMeta()">
+            <option value="">(無)</option>
+            <option value="passthrough">passthrough</option>
+            <option value="boolean_to_int">boolean_to_int</option>
+            <option value="skip">skip</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="topic-label">欄位轉換規則</span>
+        <button class="btn-ghost" style="font-size:0.8rem;padding:5px 12px;" onclick="addLogicField()">＋ 新增欄位</button>
+      </div>
+      <div style="overflow-x:auto;">
+        <div style="min-width:700px;">
+          <div style="display:grid;grid-template-columns:150px 1fr 1fr 40px;gap:0;background:#f5f5f5;
+                      font-size:0.75rem;font-weight:600;color:#555;text-transform:uppercase;letter-spacing:.4px;">
+            <div style="padding:8px 14px;border-bottom:1px solid #e0e0e0;">欄位名稱</div>
+            <div style="padding:8px 14px;border-bottom:1px solid #e0e0e0;">Read 轉換</div>
+            <div style="padding:8px 14px;border-bottom:1px solid #e0e0e0;">Write 轉換</div>
+            <div style="border-bottom:1px solid #e0e0e0;"></div>
+          </div>
+          <div id="logic-fields-body"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -552,22 +608,17 @@ async function saveConfig() {
 // ── Tab Navigation ──────────────────────────────────────────────────────────
 
 function switchTab(tabName) {
-  // Hide all tab panels
-  document.querySelectorAll(".tab-panel").forEach(panel => {
-    panel.classList.remove("active");
-  });
-  // Deactivate all tab buttons
-  document.querySelectorAll(".tab-btn").forEach(btn => {
-    btn.classList.remove("active");
-  });
+  document.querySelectorAll(".tab-panel").forEach(p => p.classList.remove("active"));
+  document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
 
-  // Show the selected panel
   const panel = document.getElementById(`tab-${tabName}`);
   if (panel) panel.classList.add("active");
 
-  // Activate the correct button based on tab name
-  document.querySelectorAll(".tab-btn")[tabName === "config" ? 0 : 1].classList.add("active");
+  const btn = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
+  if (btn) btn.classList.add("active");
+
   if (tabName === "settings") loadSettings();
+  if (tabName === "logic") loadDeviceLogic();
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -673,6 +724,259 @@ function showReconnectOverlay() {
       // still restarting, keep polling
     }
   }, 2000);
+}
+
+// ── Device Logic Editor ───────────────────────────────────────────────────────
+
+let deviceLogicData = [];
+let currentDeviceIdx = 0;
+
+const READ_TRANSFORMS  = ['passthrough','skip','boolean_to_int','scale','enum','scale_split32'];
+const WRITE_TRANSFORMS = ['passthrough','int_to_boolean','scale_inverse','enum_reverse','assert_one_to_zero'];
+
+function setLogicMsg(msg, ok) {
+  const el = document.getElementById('logic-error');
+  el.textContent = msg;
+  el.style.color = ok ? '#2d6a4f' : '#9b2226';
+}
+
+async function loadDeviceLogic() {
+  setLogicMsg('');
+  try {
+    const res = await fetch('/api/device-logic');
+    deviceLogicData = await res.json();
+    currentDeviceIdx = 0;
+    renderLogicDeviceSelect();
+    renderLogicForm();
+  } catch {
+    setLogicMsg('載入失敗');
+  }
+}
+
+function renderLogicDeviceSelect() {
+  const sel = document.getElementById('logic-device-select');
+  sel.innerHTML = deviceLogicData.map((d, i) =>
+    `<option value="${i}"${i === currentDeviceIdx ? ' selected' : ''}>${esc(d.deviceType || '(未命名)')}</option>`
+  ).join('');
+}
+
+function switchLogicDevice(idx) {
+  currentDeviceIdx = idx;
+  renderLogicForm();
+}
+
+function renderLogicForm() {
+  const dev = deviceLogicData[currentDeviceIdx];
+  if (!dev) { document.getElementById('logic-fields-body').innerHTML = ''; return; }
+  document.getElementById('ld-type').value = dev.deviceType ?? '';
+  document.getElementById('ld-readonly').checked = !!dev.readOnly;
+  document.getElementById('ld-default-transform').value = dev.defaultTransform ?? '';
+  renderFields();
+}
+
+function renderFields() {
+  const dev = deviceLogicData[currentDeviceIdx];
+  document.getElementById('logic-fields-body').innerHTML =
+    (dev.fields || []).map((f, fi) => buildFieldRow(fi, f)).join('');
+}
+
+function buildFieldRow(fi, f) {
+  const readTr  = f.read  ?? '';
+  const writeTr = f.write ?? '';
+  return `<div style="display:grid;grid-template-columns:150px 1fr 1fr 40px;gap:0;
+                      border-bottom:1px solid #f0f0f0;align-items:start;">
+    <div style="padding:10px 14px;">
+      <input value="${esc(f.name ?? '')}" style="width:100%;"
+        onblur="updateFieldName(${fi}, this.value)" />
+    </div>
+    <div style="padding:10px 14px;border-left:1px solid #f0f0f0;">
+      <select style="width:100%;" onchange="updateReadTransform(${fi}, this.value)">
+        <option value="">(無)</option>
+        ${READ_TRANSFORMS.map(t => `<option value="${t}"${t===readTr?' selected':''}>${t}</option>`).join('')}
+      </select>
+      ${buildTransformParams(fi, 'read', readTr, f)}
+    </div>
+    <div style="padding:10px 14px;border-left:1px solid #f0f0f0;">
+      <select style="width:100%;" onchange="updateWriteTransform(${fi}, this.value)">
+        <option value="">(無)</option>
+        ${WRITE_TRANSFORMS.map(t => `<option value="${t}"${t===writeTr?' selected':''}>${t}</option>`).join('')}
+      </select>
+      ${buildTransformParams(fi, 'write', writeTr, f)}
+    </div>
+    <div style="padding:10px 8px;border-left:1px solid #f0f0f0;text-align:center;">
+      <button onclick="removeLogicField(${fi})"
+        style="padding:4px 8px;background:#9b2226;color:#fff;border:none;border-radius:5px;cursor:pointer;">×</button>
+    </div>
+  </div>`;
+}
+
+function buildTransformParams(fi, side, transform, f) {
+  if (transform === 'scale') {
+    return `<div style="margin-top:6px;font-size:0.8rem;">
+      Factor: <input type="number" value="${f.scaleFactor ?? 1}" style="width:72px;"
+        oninput="updateFieldParam(${fi},'scaleFactor',parseFloat(this.value)||1)" />
+    </div>`;
+  }
+  if (transform === 'scale_inverse') {
+    const val = f.writeScaleFactor ?? f.scaleFactor ?? 1;
+    return `<div style="margin-top:6px;font-size:0.8rem;">
+      Factor: <input type="number" value="${val}" style="width:72px;"
+        oninput="updateFieldParam(${fi},'writeScaleFactor',parseFloat(this.value)||1)" />
+    </div>`;
+  }
+  if (transform === 'scale_split32') {
+    return `<div style="margin-top:6px;font-size:0.8rem;display:flex;flex-direction:column;gap:4px;">
+      <div>Factor: <input type="number" value="${f.scaleFactor??1}" style="width:72px;"
+        oninput="updateFieldParam(${fi},'scaleFactor',parseFloat(this.value)||1)" /></div>
+      <div>High key: <input value="${esc(f.highKey??'')}" style="width:120px;"
+        oninput="updateFieldParam(${fi},'highKey',this.value)" /></div>
+      <div>Low key: <input value="${esc(f.lowKey??'')}" style="width:120px;"
+        oninput="updateFieldParam(${fi},'lowKey',this.value)" /></div>
+    </div>`;
+  }
+  if (transform === 'enum' || transform === 'enum_reverse') {
+    const mapKey = transform === 'enum' ? 'enumMap' : 'writeEnumMap';
+    const pairs  = Object.entries(f[mapKey] ?? {});
+    const rows   = pairs.map((_, pi) => buildEnumPairRow(fi, side, mapKey, pairs, pi)).join('');
+    return `<div style="margin-top:6px;">
+      <div style="font-size:0.73rem;color:#888;margin-bottom:3px;">key → value</div>
+      <div id="ep-${fi}-${side}">${rows}</div>
+      <button onclick="addEnumPair(${fi},'${side}','${mapKey}')"
+        style="font-size:0.75rem;padding:2px 8px;background:#e0e0e0;border:none;
+               border-radius:4px;cursor:pointer;margin-top:4px;">＋</button>
+    </div>`;
+  }
+  return '';
+}
+
+function buildEnumPairRow(fi, side, mapKey, pairs, pi) {
+  const [k, v] = pairs[pi];
+  return `<div style="display:flex;gap:4px;align-items:center;margin-bottom:3px;">
+    <input value="${esc(String(k))}" style="width:72px;font-size:0.78rem;"
+      onblur="updateEnumKey(${fi},'${side}','${mapKey}',${pi},this.value)" />
+    <span style="color:#aaa;font-size:0.8rem;">→</span>
+    <input value="${esc(String(v))}" style="width:72px;font-size:0.78rem;"
+      onblur="updateEnumVal(${fi},'${side}','${mapKey}',${pi},this.value)" />
+    <button onclick="removeEnumPair(${fi},'${side}','${mapKey}',${pi})"
+      style="padding:0 5px;background:#e0e0e0;border:none;border-radius:3px;cursor:pointer;font-size:0.85rem;">×</button>
+  </div>`;
+}
+
+// ── Meta & field mutations ────────────────────────────────────────────────────
+
+function updateDeviceMeta() {
+  const dev = deviceLogicData[currentDeviceIdx];
+  if (!dev) return;
+  const newType = document.getElementById('ld-type').value.trim();
+  dev.deviceType = newType;
+  dev.readOnly   = document.getElementById('ld-readonly').checked;
+  const dt = document.getElementById('ld-default-transform').value;
+  if (dt) dev.defaultTransform = dt; else delete dev.defaultTransform;
+  renderLogicDeviceSelect();
+}
+
+function updateFieldName(fi, val) {
+  deviceLogicData[currentDeviceIdx].fields[fi].name = val.trim();
+}
+
+function updateReadTransform(fi, val) {
+  const f = deviceLogicData[currentDeviceIdx].fields[fi];
+  f.read = val || undefined;
+  renderFields();
+}
+
+function updateWriteTransform(fi, val) {
+  const f = deviceLogicData[currentDeviceIdx].fields[fi];
+  f.write = val || undefined;
+  renderFields();
+}
+
+function updateFieldParam(fi, key, val) {
+  deviceLogicData[currentDeviceIdx].fields[fi][key] = val;
+}
+
+function updateEnumKey(fi, side, mapKey, pi, newKey) {
+  const f = deviceLogicData[currentDeviceIdx].fields[fi];
+  const pairs = Object.entries(f[mapKey] ?? {});
+  if (!pairs[pi]) return;
+  const oldKey = pairs[pi][0];
+  const val    = pairs[pi][1];
+  const newMap = {};
+  pairs.forEach(([k, v], i) => { newMap[i === pi ? newKey : k] = v; });
+  delete newMap[oldKey];   // ensure no stale key if newKey === oldKey this is a no-op
+  f[mapKey] = newMap;
+  renderFields();
+}
+
+function updateEnumVal(fi, side, mapKey, pi, raw) {
+  const f = deviceLogicData[currentDeviceIdx].fields[fi];
+  const pairs = Object.entries(f[mapKey] ?? {});
+  if (!pairs[pi]) return;
+  const key = pairs[pi][0];
+  let val;
+  try { val = JSON.parse(raw); } catch { val = raw; }
+  f[mapKey][key] = val;
+}
+
+function addEnumPair(fi, side, mapKey) {
+  const f = deviceLogicData[currentDeviceIdx].fields[fi];
+  if (!f[mapKey]) f[mapKey] = {};
+  const newKey = 'key' + Object.keys(f[mapKey]).length;
+  f[mapKey][newKey] = '';
+  renderFields();
+}
+
+function removeEnumPair(fi, side, mapKey, pi) {
+  const f = deviceLogicData[currentDeviceIdx].fields[fi];
+  const pairs = Object.entries(f[mapKey] ?? {});
+  if (!pairs[pi]) return;
+  delete f[mapKey][pairs[pi][0]];
+  renderFields();
+}
+
+function addLogicField() {
+  const dev = deviceLogicData[currentDeviceIdx];
+  if (!dev) return;
+  dev.fields.push({ name: '', read: 'passthrough' });
+  renderFields();
+}
+
+function removeLogicField(fi) {
+  deviceLogicData[currentDeviceIdx].fields.splice(fi, 1);
+  renderFields();
+}
+
+function addLogicDevice() {
+  deviceLogicData.push({ deviceType: 'new_device', readOnly: false, fields: [] });
+  currentDeviceIdx = deviceLogicData.length - 1;
+  renderLogicDeviceSelect();
+  renderLogicForm();
+}
+
+function deleteLogicDevice() {
+  if (deviceLogicData.length <= 1) { setLogicMsg('至少需保留一個設備定義'); return; }
+  if (!confirm(`確定刪除「${deviceLogicData[currentDeviceIdx].deviceType}」？`)) return;
+  deviceLogicData.splice(currentDeviceIdx, 1);
+  currentDeviceIdx = Math.min(currentDeviceIdx, deviceLogicData.length - 1);
+  renderLogicDeviceSelect();
+  renderLogicForm();
+}
+
+async function saveDeviceLogic() {
+  setLogicMsg('');
+  try {
+    const res = await fetch('/api/device-logic', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(deviceLogicData),
+    });
+    const data = await res.json();
+    if (!res.ok) { setLogicMsg(data.error || '儲存失敗'); return; }
+    setLogicMsg('已儲存並重新載入 ✓', true);
+    setTimeout(() => setLogicMsg(''), 3000);
+  } catch {
+    setLogicMsg('網路錯誤');
+  }
 }
 
 init();
