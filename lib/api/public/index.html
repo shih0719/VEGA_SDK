@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VEGA SDK — Config Map</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: system-ui, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+    min-height: 100vh;
+  }
+
+  header {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header h1 { font-size: 1.1rem; font-weight: 600; letter-spacing: 0.5px; }
+
+  #status {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    background: #333;
+  }
+
+  #status.saved { background: #2d6a4f; }
+  #status.error { background: #9b2226; }
+
+  main { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+
+  .toolbar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: opacity 0.15s;
+  }
+
+  button:hover { opacity: 0.85; }
+  button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .btn-primary { background: #1a1a2e; color: #fff; }
+  .btn-success { background: #2d6a4f; color: #fff; }
+  .btn-danger  { background: #9b2226; color: #fff; }
+  .btn-ghost   { background: #e0e0e0; color: #333; }
+
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: #f0f0f0;
+    border-bottom: 1px solid #e0e0e0;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .card-header .topic-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    font-family: monospace;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .badge {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: #1a1a2e;
+    color: #fff;
+    white-space: nowrap;
+  }
+
+  .card-body { padding: 16px; }
+
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .field-row:last-child { margin-bottom: 0; }
+
+  input, select {
+    width: 100%;
+    padding: 7px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    background: #fafafa;
+  }
+
+  input:focus, select:focus {
+    outline: 2px solid #1a1a2e;
+    background: #fff;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+
+  .channels-section { margin-top: 12px; }
+
+  .channel-row {
+    display: grid;
+    grid-template-columns: 1fr 120px auto;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+
+  .add-channel-btn {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    padding: 5px 12px;
+  }
+
+  #empty-state {
+    text-align: center;
+    color: #999;
+    padding: 48px 0;
+    display: none;
+  }
+
+  /* Modal */
+  .modal-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-backdrop.open { display: flex; }
+
+  .modal {
+    background: #fff;
+    border-radius: 10px;
+    width: 480px;
+    max-width: 95vw;
+    padding: 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  }
+
+  .modal h2 { font-size: 1rem; margin-bottom: 16px; }
+
+  .form-group { margin-bottom: 14px; }
+
+  .form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 4px;
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .error-msg {
+    font-size: 0.8rem;
+    color: #9b2226;
+    margin-top: 12px;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 0;
+    background: #121220;
+    padding: 0 24px;
+  }
+
+  .tab-btn {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: #aaa;
+    padding: 10px 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 0;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .tab-btn.active {
+    color: #fff;
+    border-bottom-color: #4f8ef7;
+  }
+
+  .tab-btn:hover { color: #fff; opacity: 1; }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  .reconnect-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(26,26,46,0.92);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.1rem;
+    gap: 16px;
+    z-index: 200;
+  }
+
+  .reconnect-overlay.hidden { display: none; }
+
+  .spinner {
+    width: 36px;
+    height: 36px;
+    border: 4px solid #444;
+    border-top-color: #4f8ef7;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>VEGA SDK &mdash; 管理後臺</h1>
+  <span id="status">載入中…</span>
+</header>
+<nav class="tabs">
+  <button class="tab-btn active" onclick="switchTab('config')">Config Map</button>
+  <button class="tab-btn" onclick="switchTab('settings')">設定</button>
+</nav>
+
+<main>
+<div id="tab-config" class="tab-panel active">
+  <div class="toolbar">
+    <button class="btn-primary" onclick="openAddModal()">＋ 新增裝置</button>
+    <button class="btn-success" onclick="saveConfig()">儲存設定</button>
+  </div>
+
+  <div id="device-list"></div>
+  <div id="empty-state">尚無裝置設定，點擊「新增裝置」開始新增。</div>
+</div>
+</main>
+
+<!-- Add Device Modal -->
+<div class="modal-backdrop" id="add-modal">
+  <div class="modal">
+    <h2>新增裝置</h2>
+    <div class="form-group">
+      <label>MQTT Topic</label>
+      <input id="new-topic" placeholder="例：test/GW/DK1" />
+    </div>
+    <div class="form-group">
+      <label>裝置類型</label>
+      <select id="new-type"></select>
+    </div>
+    <div class="error-msg" id="add-error"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" onclick="closeAddModal()">取消</button>
+      <button class="btn-primary" onclick="confirmAdd()">新增</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let configMap = []; // Array of [topic, {type, channels}]
+let deviceTypes = [];
+
+// ── Load ──────────────────────────────────────────────────────────────────────
+
+async function init() {
+  try {
+    const [cfgRes, typesRes] = await Promise.all([
+      fetch("/api/config"),
+      fetch("/api/device-types"),
+    ]);
+    configMap = await cfgRes.json();
+    deviceTypes = await typesRes.json();
+    populateTypeSelect("new-type");
+    render();
+    setStatus("就緒", "");
+  } catch (e) {
+    setStatus("載入失敗", "error");
+  }
+}
+
+// ── Render ────────────────────────────────────────────────────────────────────
+
+function render() {
+  const list = document.getElementById("device-list");
+  const empty = document.getElementById("empty-state");
+  list.innerHTML = "";
+
+  if (configMap.length === 0) {
+    empty.style.display = "block";
+    return;
+  }
+  empty.style.display = "none";
+
+  configMap.forEach(([topic, cfg], idx) => {
+    list.appendChild(buildCard(idx, topic, cfg));
+  });
+}
+
+function buildCard(idx, topic, cfg) {
+  const card = document.createElement("div");
+  card.className = "card";
+  card.dataset.idx = idx;
+
+  // Header
+  const header = document.createElement("div");
+  header.className = "card-header";
+  header.innerHTML = `
+    <span class="topic-label" title="${esc(topic)}">${esc(topic)}</span>
+    <select class="badge" style="background:#1a1a2e;color:#fff;border:none;padding:2px 8px;border-radius:10px;font-size:0.75rem;" onchange="updateType(${idx}, this.value)">
+      ${deviceTypes.map(t => `<option value="${t}" ${t === cfg.type ? "selected" : ""}>${t}</option>`).join("")}
+    </select>
+    <button class="btn-ghost" style="padding:4px 10px;font-size:0.8rem;" onclick="editTopic(${idx})">編輯 Topic</button>
+    <button class="btn-danger" style="padding:4px 10px;font-size:0.8rem;" onclick="removeDevice(${idx})">刪除</button>
+  `;
+
+  const body = document.createElement("div");
+  body.className = "card-body";
+
+  // Channels
+  const chanSection = document.createElement("div");
+  chanSection.className = "channels-section";
+  chanSection.innerHTML = `<div class="section-label">Channels（channel 名稱 → Modbus 暫存器位址）</div>`;
+
+  const channels = cfg.channels || {};
+  Object.entries(channels).forEach(([chName, addr]) => {
+    chanSection.appendChild(buildChannelRow(idx, chName, addr));
+  });
+
+  const addBtn = document.createElement("button");
+  addBtn.className = "btn-ghost add-channel-btn";
+  addBtn.textContent = "＋ 新增 Channel";
+  addBtn.onclick = () => addChannel(idx, chanSection, addBtn);
+
+  chanSection.appendChild(addBtn);
+  body.appendChild(chanSection);
+  card.appendChild(header);
+  card.appendChild(body);
+  return card;
+}
+
+function buildChannelRow(idx, chName, addr) {
+  const row = document.createElement("div");
+  row.className = "channel-row";
+  row.innerHTML = `
+    <input value="${esc(chName)}" placeholder="channel 名稱" oninput="updateChannelName(${idx}, this, '${esc(chName)}')" />
+    <input type="number" value="${addr}" placeholder="位址" min="1" oninput="updateChannelAddr(${idx}, '${esc(chName)}', this)" />
+    <button class="btn-danger" style="padding:5px 10px;font-size:0.8rem;" onclick="removeChannel(${idx}, '${esc(chName)}', this.closest('.channel-row'))">×</button>
+  `;
+  return row;
+}
+
+// ── Mutations ─────────────────────────────────────────────────────────────────
+
+function updateType(idx, newType) {
+  configMap[idx][1].type = newType;
+}
+
+function editTopic(idx) {
+  const current = configMap[idx][0];
+  const newTopic = prompt("修改 MQTT Topic：", current);
+  if (newTopic === null) return;
+  const trimmed = newTopic.trim();
+  if (!trimmed) return alert("Topic 不可為空");
+  if (configMap.some(([t], i) => i !== idx && t === trimmed)) return alert("Topic 已存在");
+  configMap[idx][0] = trimmed;
+  render();
+}
+
+function removeDevice(idx) {
+  if (!confirm(`確定刪除「${configMap[idx][0]}」？`)) return;
+  configMap.splice(idx, 1);
+  render();
+}
+
+function updateChannelName(idx, input, oldName) {
+  const newName = input.value.trim();
+  const channels = configMap[idx][1].channels;
+  if (!newName || newName === oldName) return;
+  const val = channels[oldName];
+  delete channels[oldName];
+  channels[newName] = val;
+  // Update sibling delete button's onclick and addr oninput reference
+  const row = input.closest(".channel-row");
+  const addrInput = row.children[1];
+  const delBtn = row.children[2];
+  addrInput.oninput = () => updateChannelAddr(idx, newName, addrInput);
+  delBtn.onclick = () => removeChannel(idx, newName, row);
+  input.oninput = () => updateChannelName(idx, input, newName);
+}
+
+function updateChannelAddr(idx, chName, input) {
+  const val = parseInt(input.value, 10);
+  if (!isNaN(val) && val > 0) {
+    configMap[idx][1].channels[chName] = val;
+  }
+}
+
+function removeChannel(idx, chName, row) {
+  delete configMap[idx][1].channels[chName];
+  row.remove();
+}
+
+function addChannel(idx, section, addBtn) {
+  const chName = `channel_${Date.now()}`;
+  configMap[idx][1].channels[chName] = 1;
+  const row = buildChannelRow(idx, chName, 1);
+  section.insertBefore(row, addBtn);
+  row.querySelector("input").focus();
+  row.querySelector("input").select();
+}
+
+// ── Add Modal ─────────────────────────────────────────────────────────────────
+
+function populateTypeSelect(id) {
+  const sel = document.getElementById(id);
+  sel.innerHTML = deviceTypes.map(t => `<option value="${t}">${t}</option>`).join("");
+}
+
+function openAddModal() {
+  document.getElementById("new-topic").value = "";
+  document.getElementById("add-error").textContent = "";
+  document.getElementById("add-modal").classList.add("open");
+  document.getElementById("new-topic").focus();
+}
+
+function closeAddModal() {
+  document.getElementById("add-modal").classList.remove("open");
+}
+
+function confirmAdd() {
+  const topic = document.getElementById("new-topic").value.trim();
+  const type  = document.getElementById("new-type").value;
+  const errEl = document.getElementById("add-error");
+
+  if (!topic) { errEl.textContent = "Topic 不可為空"; return; }
+  if (configMap.some(([t]) => t === topic)) { errEl.textContent = "Topic 已存在"; return; }
+
+  configMap.push([topic, { type, channels: {} }]);
+  closeAddModal();
+  render();
+  // scroll to new card
+  const cards = document.querySelectorAll(".card");
+  cards[cards.length - 1]?.scrollIntoView({ behavior: "smooth" });
+}
+
+// ── Save ──────────────────────────────────────────────────────────────────────
+
+async function saveConfig() {
+  setStatus("儲存中…", "");
+  try {
+    const res = await fetch("/api/config", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(configMap),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || "儲存失敗");
+    setStatus("已儲存 ✓", "saved");
+    setTimeout(() => setStatus("就緒", ""), 3000);
+  } catch (e) {
+    setStatus("錯誤：" + e.message, "error");
+  }
+}
+
+// ── Tab Navigation ──────────────────────────────────────────────────────────
+
+function switchTab(tabName) {
+  // Hide all tab panels
+  document.querySelectorAll(".tab-panel").forEach(panel => {
+    panel.classList.remove("active");
+  });
+  // Deactivate all tab buttons
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  // Show the selected panel
+  const panel = document.getElementById(`tab-${tabName}`);
+  if (panel) panel.classList.add("active");
+
+  // Activate the clicked button
+  event.target.classList.add("active");
+}
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+
+function setStatus(text, cls) {
+  const el = document.getElementById("status");
+  el.textContent = text;
+  el.className = cls;
+}
+
+function esc(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+// Close modal on backdrop click
+document.getElementById("add-modal").addEventListener("click", function(e) {
+  if (e.target === this) closeAddModal();
+});
+
+// Enter key in add modal
+document.getElementById("new-topic").addEventListener("keydown", function(e) {
+  if (e.key === "Enter") confirmAdd();
+});
+
+init();
+</script>
+</body>
+</html>
