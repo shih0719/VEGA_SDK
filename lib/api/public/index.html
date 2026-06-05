@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VEGA SDK — Config Map</title>
+<title>VEGA SDK — 管理後臺</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -315,6 +315,12 @@
     </div>
   </div>
 </div>
+
+  <div class="reconnect-overlay hidden" id="reconnect-overlay">
+    <div class="spinner"></div>
+    <div id="reconnect-msg">設定已儲存，服務重新啟動中…</div>
+  </div>
+
 </main>
 
 <!-- Add Device Modal -->
@@ -633,7 +639,14 @@ async function saveSettings() {
 
 function togglePassword() {
   const inp = document.getElementById("s-mqttPassword");
-  inp.type = inp.type === "password" ? "text" : "password";
+  const btn = inp.closest("div").querySelector("button");
+  if (inp.type === "password") {
+    inp.type = "text";
+    btn.textContent = "隱藏";
+  } else {
+    inp.type = "password";
+    btn.textContent = "顯示";
+  }
 }
 
 function showReconnectOverlay() {
@@ -665,10 +678,6 @@ function showReconnectOverlay() {
 init();
 </script>
 
-<div class="reconnect-overlay hidden" id="reconnect-overlay">
-  <div class="spinner"></div>
-  <div id="reconnect-msg">設定已儲存，服務重新啟動中…</div>
-</div>
 
 </body>
 </html>
