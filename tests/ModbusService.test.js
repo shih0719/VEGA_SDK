@@ -22,6 +22,13 @@ beforeEach(() => {
   mockSerialInstance.removeAllListeners();
 });
 
+const startedServices = [];
+
+afterEach(() => {
+  startedServices.forEach((svc) => svc._stopSaveTimer());
+  startedServices.length = 0;
+});
+
 // ── TCP (existing behaviour) ──────────────────────────────────────────────────
 
 describe("TCP mode", () => {
@@ -33,6 +40,7 @@ describe("TCP mode", () => {
 
     const svc = new ModbusService({ mode: "tcp", host: "127.0.0.1", port: 502 }, {}, jest.fn());
     await svc.start();
+    startedServices.push(svc);
 
     expect(mockServerTCP).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -52,6 +60,7 @@ describe("TCP mode", () => {
 
     const svc = new ModbusService({ host: "127.0.0.1", port: 502 }, {}, jest.fn());
     await svc.start();
+    startedServices.push(svc);
 
     expect(mockServerTCP).toHaveBeenCalled();
   });
@@ -73,6 +82,7 @@ describe("RTU mode", () => {
 
     const svc = new ModbusService(rtuConfig, {}, jest.fn());
     await svc.start();
+    startedServices.push(svc);
 
     expect(mockServerSerial).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -94,6 +104,7 @@ describe("RTU mode", () => {
     const startedSpy = jest.fn();
     svc.on("started", startedSpy);
     await svc.start();
+    startedServices.push(svc);
 
     expect(startedSpy).toHaveBeenCalledTimes(1);
     expect(svc.isRunning()).toBe(true);
