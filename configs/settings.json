@@ -11,8 +11,16 @@
     }
   },
   "modbus": {
+    "mode": "tcp",
     "host": "127.0.0.1",
-    "port": 502
+    "port": 502,
+    "serial": {
+      "path": "COM3",
+      "baudRate": 9600,
+      "dataBits": 8,
+      "stopBits": 1,
+      "parity": "none"
+    }
   },
   "ui": {
     "port": 8080
