@@ -22,6 +22,8 @@ services:
       - ./logs/prod:/app/logs/prod
       # 掛載開發環境日誌目錄（可選）
       - ./logs/dev:/app/logs/dev
+    devices:
+      - "${MODBUS_SERIAL_PATH:-/dev/ttyUSB0}:${MODBUS_SERIAL_PATH:-/dev/ttyUSB0}"
     networks:
       - vega-network
 
