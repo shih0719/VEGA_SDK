@@ -57,14 +57,14 @@ npm start          # 正式模式
 
 #### Docker（僅 Linux）
 
-設定串口裝置路徑環境變數，需與 `settings.json` 的 `serial.path` 一致：
+設定串口裝置路徑環境變數，需與 `settings.json` 的 `serial.path` 一致，並使用 RTU override 檔：
 
 ```bash
 export MODBUS_SERIAL_PATH=/dev/ttyUSB0
-docker-compose up
+docker-compose -f docker-compose.yml -f docker-compose.rtu.yml up
 ```
 
-或在 `.env` 檔案中設定：
+或在 `.env` 檔案中設定（`docker-compose.rtu.yml` 自動讀取）：
 
 ```env
 MODBUS_SERIAL_PATH=/dev/ttyUSB0

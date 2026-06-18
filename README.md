@@ -54,6 +54,13 @@ docker-compose logs -f
 
 設定檔和 log 透過 volume 掛載，修改 `configs/` 後重啟容器即可套用。
 
+**Modbus RTU 模式（Docker + Linux）：**
+
+```bash
+export MODBUS_SERIAL_PATH=/dev/ttyUSB0   # 須與 settings.json serial.path 一致
+docker-compose -f docker-compose.yml -f docker-compose.rtu.yml up -d
+```
+
 ### 直接執行 Node
 
 ```bash
