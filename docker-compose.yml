@@ -12,7 +12,7 @@ services:
       - "host.docker.internal:host-gateway"
     ports:
       - "502:502"
-      - "8080:8080"
+      - "18080:18080"
     environment:
       - NODE_ENV=production
     volumes:
