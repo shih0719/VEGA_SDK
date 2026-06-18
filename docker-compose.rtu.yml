@@ -1,0 +1,11 @@
+# Modbus RTU override — serial port device mapping.
+# Usage: docker-compose -f docker-compose.yml -f docker-compose.rtu.yml up -d
+#
+# Set MODBUS_SERIAL_PATH to match configs/settings.json modbus.serial.path
+# Example: export MODBUS_SERIAL_PATH=/dev/ttyUSB0
+# Linux only — Windows Docker (WSL2) cannot forward COM ports into containers.
+
+services:
+  vega-sdk:
+    devices:
+      - "${MODBUS_SERIAL_PATH:-/dev/ttyUSB0}:${MODBUS_SERIAL_PATH:-/dev/ttyUSB0}"

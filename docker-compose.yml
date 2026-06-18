@@ -22,11 +22,6 @@ services:
       - ./logs/prod:/app/logs/prod
       # 掛載開發環境日誌目錄（可選）
       - ./logs/dev:/app/logs/dev
-    # Serial port access for Modbus RTU mode.
-    # Remove or comment out if using modbus.mode = "tcp" (default).
-    # On Linux: set MODBUS_SERIAL_PATH to the correct device (e.g. /dev/ttyUSB0)
-    devices:
-      - "${MODBUS_SERIAL_PATH:-/dev/ttyUSB0}:${MODBUS_SERIAL_PATH:-/dev/ttyUSB0}"
     networks:
       - vega-network
 
