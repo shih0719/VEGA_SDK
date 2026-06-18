@@ -3,7 +3,28 @@
     "deviceType": "switch",
     "readOnly": false,
     "defaultTransform": "boolean_to_int",
-    "fields": []
+    "fields": [
+      {
+        "name": "switch_ch1",
+        "read": "boolean_to_int",
+        "write": "int_to_boolean"
+      },
+      {
+        "name": "switch_ch2",
+        "read": "boolean_to_int",
+        "write": "int_to_boolean"
+      },
+      {
+        "name": "switch_ch3",
+        "read": "boolean_to_int",
+        "write": "int_to_boolean"
+      },
+      {
+        "name": "switch_ch4",
+        "read": "boolean_to_int",
+        "write": "int_to_boolean"
+      }
+    ]
   },
   {
     "deviceType": "aircondition",
@@ -146,6 +167,22 @@
     "fields": [
       {
         "name": "channel",
+        "read": "boolean_to_int",
+        "write": "int_to_boolean"
+      }
+    ]
+  },
+  {
+    "deviceType": "diming",
+    "readOnly": false,
+    "fields": [
+      {
+        "name": "diming",
+        "read": "passthrough",
+        "write": "passthrough"
+      },
+      {
+        "name": "switch_ch1",
         "read": "boolean_to_int",
         "write": "int_to_boolean"
       }

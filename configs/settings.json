@@ -1,8 +1,8 @@
 {
   "mqtt": {
-    "url": "mqtt://192.168.23.58:1883",
+    "url": "mqtt://host.docker.internal:1883",
     "options": {
-      "clientId": "mqttjs02355",
+      "clientId": "mqttjs02",
       "username": "user",
       "password": "password",
       "reconnectPeriod": 1000,
@@ -12,7 +12,7 @@
   },
   "modbus": {
     "mode": "tcp",
-    "host": "127.0.0.1",
+    "host": "0.0.0.0",
     "port": 502,
     "serial": {
       "path": "/dev/ttyUSB0",

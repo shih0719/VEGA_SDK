@@ -1,54 +1,112 @@
 [
   [
-    "test/GW/DK1",
+    "eastsoft/00006ULY/00006QWA",
+    {
+      "type": "diming",
+      "channels": {
+        "switch_ch1": 2
+      }
+    }
+  ],
+  [
+    "eastsoft/00006ULY/00009LUI",
+    {
+      "type": "diming",
+      "channels": {
+        "switch_ch1": 3,
+        "diming": 4
+      }
+    }
+  ],
+  [
+    "eastsoft/00006ULY/0000JKF1",
+    {
+      "type": "diming",
+      "channels": {
+        "switch_ch1": 5,
+        "diming": 6
+      }
+    }
+  ],
+  [
+    "eastsoft/00006ULY/0000BRDB",
+    {
+      "type": "diming",
+      "channels": {
+        "switch_ch1": 7,
+        "diming": 8
+      }
+    }
+  ],
+  [
+    "eastsoft/00006ULY/0000IQBA",
+    {
+      "type": "diming",
+      "channels": {
+        "switch_ch1": 9,
+        "diming": 10
+      }
+    }
+  ],
+  [
+    "eastsoft/00006ULY/0000ASKL",
+    {
+      "type": "diming",
+      "channels": {
+        "switch_ch1": 11,
+        "diming": 12
+      }
+    }
+  ],
+  [
+    "eastsoft/00006ULY/00004473",
+    {
+      "type": "diming",
+      "channels": {
+        "switch_ch1": 13,
+        "diming": 14
+      }
+    }
+  ],
+  [
+    "eastsoft/00006ULY/0000FTLA",
+    {
+      "type": "diming",
+      "channels": {
+        "switch_ch1": 15,
+        "diming": 16
+      }
+    }
+  ],
+  [
+    "eastsoft/00006ULY/0000AACB",
+    {
+      "type": "diming",
+      "channels": {
+        "switch_ch1": 17,
+        "diming": 18
+      }
+    }
+  ],
+  [
+    "eastsoft/00006ULY/0000788L",
+    {
+      "type": "diming",
+      "channels": {
+        "switch_ch1": 19,
+        "diming": 20
+      }
+    }
+  ],
+  [
+    "eastsoft/00006ULY/0000GWLZ",
     {
       "type": "switch",
       "channels": {
-        "switch_ch1": 1,
-        "switch_ch2": 2,
-        "switch_ch3": 3,
-        "switch_ch4": 4
-      }
-    }
-  ],
-  [
-    "test/GW/DK4",
-    {
-      "type": "panel",
-      "channels": {
-        "switch_ch1": 13,
-        "button_id": 14
-      }
-    }
-  ],
-  [
-    "eastsoft/0000IPX8/00008IBU",
-    {
-      "type": "aircondition",
-      "channels": {
-        "power_on": 15,
-        "rev_speed": 16
-      }
-    }
-  ],
-  [
-    "test/GW/DK80",
-    {
-      "type": "meter",
-      "channels": {
-        "switch_ch1": 19,
-        "electricity_high": 20,
-        "electricity_low": 21,
-        "set_init_electricity": 22
-      }
-    }
-  ],
-  [
-    "test/P1/DK1",
-    {
-      "type": "demo",
-      "channels": {
-        "channel": 8
+        "switch_ch1": 21,
+        "switch_ch2": 22,
+        "switch_ch3": 23,
+        "switch_ch4": 24
       }
     }
   ]

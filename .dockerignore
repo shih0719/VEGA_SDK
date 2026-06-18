@@ -1,0 +1,11 @@
+node_modules
+npm-debug.log*
+.pnpm-debug.log*
+pnpm-lock.yaml
+.env
+.env.*
+logs
+*.log
+.git
+.gitignore
+README.md
