@@ -11,8 +11,10 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
     ports:
-      - "502:502"
-      - "18080:18080"
+      - "${MODBUS_PORT:-502}:${MODBUS_PORT:-502}"
+      - "${UI_PORT:-18080}:${UI_PORT:-18080}"
+    env_file:
+      - .env
     environment:
       - NODE_ENV=production
     volumes:

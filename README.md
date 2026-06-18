@@ -14,9 +14,15 @@ MQTT 與 Modbus 之間的橋接服務。
 pnpm install
 ```
 
-### 2. 編輯設定檔
+### 2. 設定環境變數
 
-編輯 `configs/settings.json`，填入 MQTT broker 連線資訊與 Modbus 模式（詳見[設定說明](#設定說明)）。
+複製範本並填入實際值：
+
+```bash
+cp .env.example .env
+```
+
+編輯 `.env`，填入 MQTT broker 連線資訊與 Modbus 模式（詳見[設定說明](#設定說明)）。
 
 ### 3. 產生設備對應表
 
@@ -52,12 +58,13 @@ docker-compose down
 docker-compose logs -f
 ```
 
-設定檔和 log 透過 volume 掛載，修改 `configs/` 後重啟容器即可套用。
+設定檔和 log 透過 volume 掛載，修改 `configs/` 或 `.env` 後重啟容器即可套用。
 
 **Modbus RTU 模式（Docker + Linux）：**
 
+在 `.env` 設定 `MODBUS_MODE=rtu` 及 `MODBUS_SERIAL_PATH=/dev/ttyUSB0`，再加掛 RTU override：
+
 ```bash
-export MODBUS_SERIAL_PATH=/dev/ttyUSB0   # 須與 settings.json serial.path 一致
 docker-compose -f docker-compose.yml -f docker-compose.rtu.yml up -d
 ```
 
@@ -67,6 +74,8 @@ docker-compose -f docker-compose.yml -f docker-compose.rtu.yml up -d
 npm run dev    # 開發模式（NODE_ENV=development）
 npm start      # 正式模式
 ```
+
+**Windows RTU 模式：** 在 `.env` 設定 `MODBUS_MODE=rtu`、`MODBUS_SERIAL_PATH=COM3`（依裝置管理員確認 port），直接 `npm start` 即可，無需 Docker。
 
 ### PM2
 
@@ -87,46 +96,26 @@ pm2-startup install
 
 ## 設定說明
 
-### `configs/settings.json`
+所有設定透過 `.env` 管理（`.env.example` 為範本）。
 
-```json
-{
-  "mqtt": {
-    "url": "mqtt://192.168.1.1:1883",
-    "options": {
-      "clientId": "vega-sdk",
-      "username": "user",
-      "password": "password",
-      "reconnectPeriod": 1000,
-      "connectTimeout": 60000,
-      "keepalive": 60
-    }
-  },
-  "modbus": {
-    "mode": "tcp",
-    "host": "0.0.0.0",
-    "port": 502,
-    "serial": {
-      "path": "/dev/ttyUSB0",
-      "baudRate": 9600,
-      "dataBits": 8,
-      "stopBits": 1,
-      "parity": "none"
-    }
-  },
-  "ui": {
-    "port": 8080
-  }
-}
-```
-
-| 欄位 | 說明 |
-|---|---|
-| `mqtt.url` | MQTT broker 位址 |
-| `modbus.mode` | `"tcp"`（預設）或 `"rtu"` |
-| `modbus.host` / `port` | TCP 模式使用 |
-| `modbus.serial.*` | RTU 模式使用（見下方） |
-| `ui.port` | Web 管理介面 port（預設 `8080`） |
+| 變數 | 說明 | 預設值 |
+|---|---|---|
+| `MQTT_URL` | MQTT broker 位址 | — |
+| `MQTT_CLIENT_ID` | MQTT client ID | — |
+| `MQTT_USERNAME` | MQTT 帳號 | — |
+| `MQTT_PASSWORD` | MQTT 密碼 | — |
+| `MQTT_RECONNECT_PERIOD` | 重連間隔（ms） | `1000` |
+| `MQTT_CONNECT_TIMEOUT` | 連線逾時（ms） | `60000` |
+| `MQTT_KEEPALIVE` | Keepalive（秒） | `60` |
+| `MODBUS_MODE` | `tcp`（預設）或 `rtu` | `tcp` |
+| `MODBUS_HOST` | TCP 模式監聽位址 | `0.0.0.0` |
+| `MODBUS_PORT` | TCP 模式 port | `502` |
+| `MODBUS_SERIAL_PATH` | RTU 串口路徑（Windows: `COM3`，Linux: `/dev/ttyUSB0`） | — |
+| `MODBUS_BAUD_RATE` | RTU 鮑率 | `9600` |
+| `MODBUS_DATA_BITS` | RTU 資料位元 | `8` |
+| `MODBUS_STOP_BITS` | RTU 停止位元 | `1` |
+| `MODBUS_PARITY` | RTU 同位檢查 | `none` |
+| `UI_PORT` | Web 管理介面 port | `18080` |
 
 > Modbus RTU 串口設定請參閱 [docs/modbus-rtu-setup.md](docs/modbus-rtu-setup.md)。
 
@@ -169,7 +158,7 @@ node converter/generate_config.js
 服務啟動後可透過瀏覽器存取：
 
 ```
-http://localhost:8080
+http://localhost:18080
 ```
 
 提供設備對應表的瀏覽與編輯功能。修改後需重啟服務才會生效。
@@ -201,7 +190,9 @@ http://localhost:8080
 ## 資料夾結構
 
 ```
-configs/          設定檔（config_map.json、settings.json）
+.env              環境變數設定（不進 git）
+.env.example      環境變數範本
+configs/          設定檔（config_map.json）
 converter/        Excel → config_map.json 轉換工具
 lib/
   cmd/            CLI 入口

@@ -4,7 +4,8 @@
     {
       "type": "diming",
       "channels": {
-        "switch_ch1": 2
+        "switch_ch1": 1,
+        "diming": 2
       }
     }
   ],

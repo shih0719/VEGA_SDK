@@ -16,6 +16,7 @@
   <button class="tab-btn active" data-tab="config"   onclick="switchTab('config')">Config Map</button>
   <button class="tab-btn"        data-tab="settings" onclick="switchTab('settings')">設定</button>
   <button class="tab-btn"        data-tab="logic"    onclick="switchTab('logic')">設備邏輯</button>
+  <button class="tab-btn"        data-tab="logs"     onclick="switchTab('logs')">Logs</button>
 </nav>
 
 <main>
@@ -112,6 +113,31 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div id="tab-logs" class="tab-panel">
+  <div style="max-width:980px;margin:0 auto;">
+    <div class="toolbar" style="align-items:center;flex-wrap:wrap;gap:10px;">
+      <a id="log-download-btn" class="btn-primary" href="/api/logs/download" download="app.log">下載 app.log</a>
+      <button class="btn-ghost" onclick="loadLogs()">重新整理</button>
+      <label style="font-size:0.875rem;font-weight:600;">顯示最後</label>
+      <select id="log-lines-select" onchange="loadLogs()" style="width:auto;">
+        <option value="100">100 行</option>
+        <option value="200" selected>200 行</option>
+        <option value="500">500 行</option>
+        <option value="1000">1000 行</option>
+      </select>
+      <span id="log-status" style="font-size:0.8rem;color:#888;"></span>
+    </div>
+    <pre id="log-viewer" style="
+      background:#1e1e1e;color:#d4d4d4;
+      font-size:0.78rem;line-height:1.5;
+      padding:16px;border-radius:6px;
+      overflow:auto;max-height:65vh;
+      white-space:pre-wrap;word-break:break-all;
+      margin-top:12px;
+    ">載入中…</pre>
   </div>
 </div>
 
