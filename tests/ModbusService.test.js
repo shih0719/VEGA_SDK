@@ -127,6 +127,18 @@ describe("RTU mode", () => {
       "Modbus RTU mode requires modbus.serial.path in settings.json"
     );
   });
+
+  test("start() rejects when ServerSerial emits error before initialized", async () => {
+    mockServerSerial.mockImplementation(() => {
+      setImmediate(() => mockSerialInstance.emit("error", new Error("ENOENT: /dev/ttyUSB0")));
+      return mockSerialInstance;
+    });
+
+    const svc = new ModbusService(rtuConfig, {}, jest.fn());
+    // Attach an error listener to prevent ModbusService EventEmitter from throwing
+    svc.on("error", () => {});
+    await expect(svc.start()).rejects.toThrow("ENOENT: /dev/ttyUSB0");
+  });
 });
 
 // ── Unknown mode ──────────────────────────────────────────────────────────────
