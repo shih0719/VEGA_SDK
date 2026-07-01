@@ -179,7 +179,8 @@
       {
         "name": "diming",
         "read": "passthrough",
-        "write": "passthrough"
+        "write": "passthrough",
+        "zeroWhenFalse": "switch_ch1"
       },
       {
         "name": "switch_ch1",
