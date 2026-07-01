@@ -4,8 +4,7 @@
     {
       "type": "diming",
       "channels": {
-        "switch_ch1": 1,
-        "diming": 2
+        "diming": 1
       }
     }
   ],
@@ -14,8 +13,7 @@
     {
       "type": "diming",
       "channels": {
-        "switch_ch1": 3,
-        "diming": 4
+        "diming": 2
       }
     }
   ],
@@ -24,8 +22,7 @@
     {
       "type": "diming",
       "channels": {
-        "switch_ch1": 5,
-        "diming": 6
+        "diming": 3
       }
     }
   ],
@@ -34,8 +31,7 @@
     {
       "type": "diming",
       "channels": {
-        "switch_ch1": 7,
-        "diming": 8
+        "diming": 4
       }
     }
   ],
@@ -44,8 +40,7 @@
     {
       "type": "diming",
       "channels": {
-        "switch_ch1": 9,
-        "diming": 10
+        "diming": 5
       }
     }
   ],
@@ -54,8 +49,7 @@
     {
       "type": "diming",
       "channels": {
-        "switch_ch1": 11,
-        "diming": 12
+        "diming": 6
       }
     }
   ],
@@ -64,8 +58,7 @@
     {
       "type": "diming",
       "channels": {
-        "switch_ch1": 13,
-        "diming": 14
+        "diming": 7
       }
     }
   ],
@@ -74,8 +67,7 @@
     {
       "type": "diming",
       "channels": {
-        "switch_ch1": 15,
-        "diming": 16
+        "diming": 8
       }
     }
   ],
@@ -84,8 +76,7 @@
     {
       "type": "diming",
       "channels": {
-        "switch_ch1": 17,
-        "diming": 18
+        "diming": 9
       }
     }
   ],
@@ -94,20 +85,331 @@
     {
       "type": "diming",
       "channels": {
-        "switch_ch1": 19,
+        "diming": 10
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/0000LABK",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 11
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/0000NAVQ",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 12
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/0000FO8R",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 13
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/000014LZ",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 14
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/00004P17",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 15
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/0000MATN",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 16
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/000002RN",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 17
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/00003SV7",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 18
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/0000MEE0",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 19
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/0000O3EN",
+    {
+      "type": "diming",
+      "channels": {
         "diming": 20
       }
     }
   ],
   [
-    "eastsoft/00006ULY/0000GWLZ",
+    "eastsoft/00002PMD/0000KWJL",
     {
-      "type": "switch",
+      "type": "diming",
       "channels": {
-        "switch_ch1": 21,
-        "switch_ch2": 22,
-        "switch_ch3": 23,
-        "switch_ch4": 24
+        "diming": 21
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/000042KZ",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 22
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/00000F5M",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 23
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/0000DHVO",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 24
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/000091VX",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 25
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/0000J7AL",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 26
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/0000QEJA",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 27
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/0000PDHQ",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 28
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/0000D905",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 29
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/0000KAFP",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 30
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/00008LPA",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 31
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/0000IZUG",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 32
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/0000ERGQ",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 33
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/0000GGHT",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 34
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/00009UKW",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 35
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/000083ZT",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 36
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/00002NDN",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 37
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/00009AC7",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 38
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/0000HC55",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 39
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/00007X6U",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 40
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/0000C5RP",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 41
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/0000A7BE",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 42
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/0000AAD8",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 43
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/0000IATQ",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 44
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/0000FSNY",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 45
+      }
+    }
+  ],
+  [
+    "eastsoft/00002PMD/0000FVWM",
+    {
+      "type": "diming",
+      "channels": {
+        "diming": 46
       }
     }
   ]
