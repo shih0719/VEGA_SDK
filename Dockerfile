@@ -1,7 +1,7 @@
 FROM node:18-alpine
 
 # 安裝必要的系統工具（如果需要）
-RUN apk add --no-cache tini
+RUN apk add --no-cache tini su-exec
 
 WORKDIR /app
 
@@ -28,7 +28,8 @@ COPY --chown=vega:nodejs . .
 
 # 創建必要目錄並設定權限
 RUN mkdir -p logs/prod logs/dev data && \
-    chown -R vega:nodejs /app
+    chown -R vega:nodejs /app && \
+    chmod +x entrypoint.sh
 
 # 設定環境變數
 ENV NODE_ENV=production \
@@ -37,15 +38,13 @@ ENV NODE_ENV=production \
 # 暴露端口
 EXPOSE 502
 
-# 切換到非 root 用戶
-USER vega
-
 # 健康檢查
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD node -e "process.exit(0)" || exit 1
 
+# entrypoint 以 root 身分修正掛載的 logs 目錄權限後，再切換到非 root 用戶執行
 # 使用 tini 作為 init 進程（優雅處理信號）
-ENTRYPOINT ["/sbin/tini", "--"]
+ENTRYPOINT ["/sbin/tini", "--", "/app/entrypoint.sh"]
 
 # 啟動命令
 CMD ["npm", "start"]

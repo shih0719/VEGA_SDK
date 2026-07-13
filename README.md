@@ -77,21 +77,6 @@ npm start      # 正式模式
 
 **Windows RTU 模式：** 在 `.env` 設定 `MODBUS_MODE=rtu`、`MODBUS_SERIAL_PATH=COM3`（依裝置管理員確認 port），直接 `npm start` 即可，無需 Docker。
 
-### PM2
-
-```bash
-npm run ecosystem
-```
-
-**Windows PM2 開機自啟：**
-
-```bash
-# 以系統管理員身份執行
-npm install pm2-windows-startup -g
-pm2 save
-pm2-startup install
-```
-
 ---
 
 ## 設定說明

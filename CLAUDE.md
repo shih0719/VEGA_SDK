@@ -19,9 +19,6 @@ npm run dev          # NODE_ENV=development
 npm start            # plain node
 npm run start:prod   # NODE_ENV=production
 
-# PM2 (process manager)
-npm run ecosystem    # pm2 start ecosystem.config.js --env production
-
 # Docker
 npm run docker:compose:up     # start with docker-compose
 npm run docker:compose:build  # rebuild and start

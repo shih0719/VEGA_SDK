@@ -9,7 +9,6 @@
     "dev": "cross-env NODE_ENV=development node index.js",
     "start": "node index.js",
     "start:prod": "cross-env NODE_ENV=production node index.js",
-    "ecosystem": "pm2 start ecosystem.config.js --env production",
     "docker:build": "docker build -t vega-sdk:latest .",
     "docker:run": "docker run -d --name vega-sdk -p 502:502 -e NODE_ENV=production vega-sdk:latest",
     "docker:run:dev": "docker run -d --name vega-sdk-dev -p 502:502 -e NODE_ENV=development vega-sdk:latest",
