@@ -1,6 +1,18 @@
 version: "3.8"
 
 services:
+  mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: vega-mosquitto
+    restart: unless-stopped
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./configs/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - mosquitto-data:/mosquitto/data
+    networks:
+      - vega-network
+
   vega-sdk:
     build:
       context: .
@@ -8,6 +20,8 @@ services:
     container_name: vega-sdk
     restart: unless-stopped
     init: true
+    depends_on:
+      - mosquitto
     extra_hosts:
       - "host.docker.internal:host-gateway"
     ports:
@@ -33,4 +47,6 @@ networks:
 
 volumes:
   vega-data:
+    driver: local
+  mosquitto-data:
     driver: local

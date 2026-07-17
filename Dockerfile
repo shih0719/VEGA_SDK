@@ -42,7 +42,7 @@ EXPOSE 502
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD node -e "process.exit(0)" || exit 1
 
-# entrypoint 以 root 身分修正掛載的 logs 目錄權限後，再切換到非 root 用戶執行
+# entrypoint 以 root 身分修正掛載的 logs/configs 目錄權限後，再切換到非 root 用戶執行
 # 使用 tini 作為 init 進程（優雅處理信號）
 ENTRYPOINT ["/sbin/tini", "--", "/app/entrypoint.sh"]
 
