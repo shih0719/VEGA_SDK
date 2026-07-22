@@ -172,6 +172,64 @@ http://localhost:18080
 
 ---
 
+## 作為 SDK 嵌入使用
+
+除了獨立服務外，`vega-sdk` 也可以被第三方 `require` 進自己的 Node 專案，自行組裝並管理生命週期：
+
+```js
+const { CoreService, MqttService, ModbusService, deviceManager } = require("vega-sdk");
+
+const config = {
+  // topic -> { type, channels: { channelName: registerAddr } }
+  map: new Map([
+    ["site/ac1/state", { type: "ac", channels: { power: 0, mode: 1 } }],
+  ]),
+  reverseMap: new Map([
+    [0, { topic: "site/ac1/state/command", channel: "power", type: "ac" }],
+    [1, { topic: "site/ac1/state/command", channel: "mode", type: "ac" }],
+  ]),
+};
+
+const mqttService = new MqttService({
+  url: "mqtt://broker.example.com",
+  options: { clientId: "my-app", reconnectPeriod: 1000, connectTimeout: 60000, keepalive: 60 },
+});
+
+const modbusService = new ModbusService(
+  { mode: "tcp", host: "0.0.0.0", port: 502 },
+  Array(300).fill(0),  // 初始 holding registers
+  (registers) => {}    // registers 變動時的回呼，需自行決定是否持久化
+);
+
+const core = new CoreService(config, { mqttService, modbusService, deviceManager });
+
+core.on("error", console.error);
+core.on("deviceError", console.error);
+await core.start();
+
+core.getActiveConfig(); // { source: "injected", topics: 1, registers: 2 }
+```
+
+自行傳入 `config.map` / `config.reverseMap`（如上）時，`vega-sdk` 不會讀取自己的
+`configs/config_map.json`，也不會 `process.exit`，可安全嵌入他人的進程。省略則會
+退回讀取 `configs/config_map.json`（與獨立服務模式相同行為）。
+
+### API
+
+- **`CoreService(config, services)`** — `services` 需提供 `mqttService`、
+  `modbusService`、`deviceManager`（皆為實作對應介面的 `EventEmitter`）。
+  方法：`start()`、`stop()`、`getActiveConfig()`。
+  事件：`started`、`stopped`、`mqttConnected`、`mqttDisconnected`、
+  `modbusStarted`、`modbusStopped`、`error`、`deviceError`。
+- **`MqttService(config)`** — 包裝 `mqtt` 套件，`config` 為 `{ url, options }`。
+- **`ModbusService(config, holdingRegisters, saveHoldingRegisters)`** —
+  `config` 為 `{ mode: "tcp"|"rtu", host, port, serial }`。
+- **`deviceManager`** — 設備邏輯 singleton registry（`getDeviceLogic(type)`、
+  `getRegisteredTypes()`）。⚠️ `require` 時會立即讀取
+  `configs/device_logic.json`，該檔案在嵌入端也必須存在，否則會擲出例外。
+
+---
+
 ## 資料夾結構
 
 ```
