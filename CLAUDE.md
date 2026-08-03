@@ -36,7 +36,7 @@ CoreModule.js          → library entry point (exports lib/core.js CoreService)
 lib/
   cmd/cli.js           → Commander.js CLI + readline REPL, instantiates CoreService
   core.js              → CoreService (EventEmitter) — wires MQTT ↔ Modbus
-  config.js            → loads configs/settings.json + configs/config_map.json, builds Map/reverseMap
+  config.js            → loads .env (via dotenv) + configs/config_map.json, builds Map/reverseMap
   configValidator.js   → validates config_map.json schema
   services/
     MqttService.js     → wraps `mqtt` client, emits: connected, message, disconnected, error
@@ -52,7 +52,6 @@ lib/
   logger/              → winston-based logger, exported as defaultLogger
   utils.js             → SameKeytoMap helper (maps channel keys to register values)
 configs/
-  settings.json        → MQTT broker URL/credentials + Modbus host/port
   config_map.json      → JSON array of [topic, {type, channels}] pairs; channels map channel name → Modbus register address
   holding_registers.json → persisted Modbus holding register state (auto-created at runtime)
 converter/
@@ -83,7 +82,7 @@ converter/
 
 ## Web UI / API Server
 
-Started automatically by `cli.js` on the port set in `configs/settings.json` under `ui.port` (defaults to 8080).
+Started automatically by `cli.js` on the port set by `UI_PORT` in `.env` (defaults to 18080).
 
 | Route | Method | Purpose |
 |---|---|---|
@@ -96,7 +95,7 @@ The API server does **not** hot-reload CoreService after a config save — a res
 
 ## Configuration
 
-`configs/settings.json` — MQTT broker, Modbus TCP server settings, and optional `ui.port`.
+`.env` (loaded via `dotenv` in `lib/config.js`) — MQTT broker URL/credentials, Modbus mode (`tcp`/`rtu`), TCP host/port or RTU serial settings, and `UI_PORT`. See `.env.example` for all keys.
 
 `configs/config_map.json` — stored as a JSON array of `[topic, config]` tuples (not a plain object) because it is loaded directly into a `new Map(deviceMapData)`.
 

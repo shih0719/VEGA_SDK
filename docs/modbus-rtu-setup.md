@@ -13,36 +13,30 @@ VEGA SDK 預設使用 **Modbus TCP**，若需要透過 RS-232 / RS-485 串口與
 
 ## 設定步驟
 
-### 1. 修改 `configs/settings.json`
+### 1. 修改專案根目錄的 `.env`
 
-找到 `modbus` 區塊，將 `mode` 改為 `"rtu"`，並填入串口參數：
+找到 `MODBUS_MODE`，改為 `rtu`，並填入串口參數（可參考 `.env.example`）：
 
-```json
-{
-  "modbus": {
-    "mode": "rtu",
-    "serial": {
-      "path": "COM3",
-      "baudRate": 9600,
-      "dataBits": 8,
-      "stopBits": 1,
-      "parity": "none"
-    }
-  }
-}
+```env
+MODBUS_MODE=rtu
+MODBUS_SERIAL_PATH=COM3
+MODBUS_BAUD_RATE=9600
+MODBUS_DATA_BITS=8
+MODBUS_STOP_BITS=1
+MODBUS_PARITY=none
 ```
 
 #### 參數說明
 
 | 參數 | 說明 | 常見值 |
 |---|---|---|
-| `path` | 串口裝置路徑 | Windows: `COM3`、`COM4`；Linux: `/dev/ttyUSB0`、`/dev/ttyS0` |
-| `baudRate` | 傳輸速率（Baud） | `9600`、`19200`、`38400`、`115200` |
-| `dataBits` | 資料位元數 | `8`（Modbus RTU 標準） |
-| `stopBits` | 停止位元數 | `1`（Modbus RTU 標準） |
-| `parity` | 奇偶校驗 | `"none"`、`"even"`、`"odd"` |
+| `MODBUS_SERIAL_PATH` | 串口裝置路徑 | Windows: `COM3`、`COM4`；Linux: `/dev/ttyUSB0`、`/dev/ttyS0` |
+| `MODBUS_BAUD_RATE` | 傳輸速率（Baud） | `9600`、`19200`、`38400`、`115200` |
+| `MODBUS_DATA_BITS` | 資料位元數 | `8`（Modbus RTU 標準） |
+| `MODBUS_STOP_BITS` | 停止位元數 | `1`（Modbus RTU 標準） |
+| `MODBUS_PARITY` | 奇偶校驗 | `none`、`even`、`odd` |
 
-> **提示：** `host` 和 `port` 欄位在 RTU 模式下不使用，保留即可。
+> **提示：** `MODBUS_HOST` 和 `MODBUS_PORT` 在 RTU 模式下不使用，保留即可。
 
 ---
 
@@ -57,7 +51,7 @@ npm start          # 正式模式
 
 #### Docker（僅 Linux）
 
-設定串口裝置路徑環境變數，需與 `settings.json` 的 `serial.path` 一致，並使用 RTU override 檔：
+設定串口裝置路徑環境變數，需與 `.env` 的 `MODBUS_SERIAL_PATH` 一致，並使用 RTU override 檔：
 
 ```bash
 export MODBUS_SERIAL_PATH=/dev/ttyUSB0
@@ -92,19 +86,15 @@ Modbus RTU server started on COM3 @ 9600 baud with save interval 60000ms
 
 ## 切換回 TCP 模式
 
-只需將 `settings.json` 的 `mode` 改回 `"tcp"` 並重啟服務：
+只需將 `.env` 的 `MODBUS_MODE` 改回 `tcp` 並重啟服務：
 
-```json
-{
-  "modbus": {
-    "mode": "tcp",
-    "host": "127.0.0.1",
-    "port": 502
-  }
-}
+```env
+MODBUS_MODE=tcp
+MODBUS_HOST=0.0.0.0
+MODBUS_PORT=502
 ```
 
-`serial` 區塊保留不刪除，下次切換 RTU 時不需重新填寫。
+其餘 `MODBUS_SERIAL_*` 欄位保留不刪除，下次切換 RTU 時不需重新填寫。
 
 ---
 

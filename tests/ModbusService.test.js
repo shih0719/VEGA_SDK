@@ -113,7 +113,7 @@ describe("RTU mode", () => {
   test("start() rejects when serial config is missing", async () => {
     const svc = new ModbusService({ mode: "rtu" }, {}, jest.fn());
     await expect(svc.start()).rejects.toThrow(
-      "Modbus RTU mode requires modbus.serial.path in settings.json"
+      "Modbus RTU mode requires MODBUS_SERIAL_PATH in .env"
     );
   });
 
@@ -124,7 +124,7 @@ describe("RTU mode", () => {
       jest.fn()
     );
     await expect(svc.start()).rejects.toThrow(
-      "Modbus RTU mode requires modbus.serial.path in settings.json"
+      "Modbus RTU mode requires MODBUS_SERIAL_PATH in .env"
     );
   });
 
