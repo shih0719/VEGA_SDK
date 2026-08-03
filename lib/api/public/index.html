@@ -16,6 +16,7 @@
   <button class="tab-btn active" data-tab="config"   onclick="switchTab('config')">Config Map</button>
   <button class="tab-btn"        data-tab="logic"    onclick="switchTab('logic')">設備邏輯</button>
   <button class="tab-btn"        data-tab="logs"     onclick="switchTab('logs')">Logs</button>
+  <button class="tab-btn"        data-tab="audit"    onclick="switchTab('audit')">異動紀錄</button>
 </nav>
 
 <main>
@@ -109,6 +110,29 @@
   </div>
 </div>
 
+<div id="tab-audit" class="tab-panel">
+  <div style="max-width:980px;margin:0 auto;">
+    <div class="toolbar" style="align-items:center;flex-wrap:wrap;gap:10px;">
+      <select id="audit-kind-select" onchange="loadAudit()" style="width:auto;">
+        <option value="write">控制寫入 (Modbus→MQTT)</option>
+        <option value="state">狀態變更 (MQTT→Modbus)</option>
+      </select>
+      <input id="audit-topic-filter" placeholder="篩選 topic" oninput="loadAudit()" style="width:auto;">
+      <input id="audit-channel-filter" placeholder="篩選 channel" oninput="loadAudit()" style="width:auto;">
+      <button class="btn-ghost" onclick="loadAudit()">重新整理</button>
+      <select id="audit-lines-select" onchange="loadAudit()" style="width:auto;">
+        <option value="100">100 筆</option>
+        <option value="200" selected>200 筆</option>
+        <option value="500">500 筆</option>
+      </select>
+      <span id="audit-status" style="font-size:0.8rem;color:#888;"></span>
+    </div>
+    <table id="audit-table" style="width:100%;border-collapse:collapse;margin-top:12px;font-size:0.85rem;">
+      <thead><tr id="audit-table-head"></tr></thead>
+      <tbody id="audit-table-body"></tbody>
+    </table>
+  </div>
+</div>
 
 </main>
 
