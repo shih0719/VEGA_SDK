@@ -4,3 +4,5 @@ node_modules/
 logs/
 dist/
 coverage/
+configs/config_map.json
+converter/device_config.xlsx
