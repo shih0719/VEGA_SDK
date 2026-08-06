@@ -1,6 +1,6 @@
 [
   [
-    "eastsoft/0000D3KB/0000NIQA",
+    "eastsoft/0000D3KB/000030KJ",
     {
       "type": "switch",
       "channels": {
@@ -12,7 +12,7 @@
     }
   ],
   [
-    "eastsoft/0000D3KB/00008F5I",
+    "eastsoft/0000D3KB/0000EFUK",
     {
       "type": "switch",
       "channels": {
@@ -24,7 +24,7 @@
     }
   ],
   [
-    "eastsoft/0000D3KB/000EFUK",
+    "eastsoft/0000D3KB/000028NP",
     {
       "type": "switch",
       "channels": {
@@ -36,7 +36,7 @@
     }
   ],
   [
-    "eastsoft/0000D3KB/000028NP",
+    "eastsoft/0000D3KB/0000KG2A",
     {
       "type": "switch",
       "channels": {
@@ -48,7 +48,7 @@
     }
   ],
   [
-    "eastsoft/0000D3KB/0000KG2A",
+    "eastsoft/0000D3KB/0000NIQA",
     {
       "type": "switch",
       "channels": {
@@ -60,7 +60,7 @@
     }
   ],
   [
-    "eastsoft/0000D3KB/000030KJ",
+    "eastsoft/0000D3KB/00008F5I",
     {
       "type": "switch",
       "channels": {
@@ -72,7 +72,7 @@
     }
   ],
   [
-    "eastsoft/0000D3KB/0000BHJR",
+    "eastsoft/0000D3KB/0000ATTW",
     {
       "type": "switch",
       "channels": {
@@ -84,7 +84,7 @@
     }
   ],
   [
-    "eastsoft/0000D3KB/0000ACPS",
+    "eastsoft/0000D3KB/0000DYQ7",
     {
       "type": "switch",
       "channels": {
@@ -96,7 +96,43 @@
     }
   ],
   [
-    "eastsoft/0000D3KB/0000AEF5",
+    "eastsoft/0000D3KB/000075QV",
+    {
+      "type": "switch",
+      "channels": {
+        "switch_ch1": 33,
+        "switch_ch2": 34,
+        "switch_ch3": 35,
+        "switch_ch4": 36
+      }
+    }
+  ],
+  [
+    "eastsoft/0000D3KB/0000LD3N",
+    {
+      "type": "switch",
+      "channels": {
+        "switch_ch1": 37,
+        "switch_ch2": 38,
+        "switch_ch3": 39,
+        "switch_ch4": 40
+      }
+    }
+  ],
+  [
+    "eastsoft/0000D3KB/0000BHJR",
+    {
+      "type": "switch",
+      "channels": {
+        "switch_ch1": 41,
+        "switch_ch2": 42,
+        "switch_ch3": 43,
+        "switch_ch4": 44
+      }
+    }
+  ],
+  [
+    "eastsoft/0000D3KB/0000ACPS",
     {
       "type": "switch",
       "channels": {
@@ -108,7 +144,7 @@
     }
   ],
   [
-    "eastsoft/0000D3KB/0000LD3N",
+    "eastsoft/0000D3KB/0000AEF5",
     {
       "type": "switch",
       "channels": {
